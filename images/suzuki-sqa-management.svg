@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b"/>
+      <stop offset="100%" stop-color="#141e33"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="liveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Top Browser Chrome -->
+  <rect x="0" y="0" width="1200" height="60" fill="#090d1a" border-bottom="#1e293b"/>
+  <circle cx="30" cy="30" r="6" fill="#ef4444"/>
+  <circle cx="50" cy="30" r="6" fill="#f59e0b"/>
+  <circle cx="70" cy="30" r="6" fill="#10b981"/>
+
+  <!-- URL Bar -->
+  <rect x="180" y="14" width="700" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <circle cx="205" cy="30" r="4" fill="#10b981"/>
+  <text x="225" y="35" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="13" font-weight="600">https://suzukisqamanagement.in</text>
+  <rect x="790" y="20" width="80" height="20" rx="10" fill="#10b981" fill-opacity="0.2"/>
+  <text x="830" y="34" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">LIVE 200 OK</text>
+
+  <!-- Live Badge -->
+  <rect x="1000" y="14" width="160" height="32" rx="16" fill="url(#liveGrad)"/>
+  <circle cx="1025" cy="30" r="4" fill="#ffffff"/>
+  <text x="1085" y="35" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">PRODUCTION CLIENT</text>
+
+  <!-- App Header -->
+  <rect x="40" y="85" width="1120" height="75" rx="12" fill="#111c35" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="60" y="102" width="42" height="42" rx="8" fill="url(#accentGrad)"/>
+  <text x="81" y="129" fill="#ffffff" font-family="system-ui, sans-serif" font-size="22" font-weight="900" text-anchor="middle">S</text>
+
+  <text x="120" y="120" fill="#ffffff" font-family="system-ui, sans-serif" font-size="20" font-weight="800">SUZUKI SQA MANAGEMENT PORTAL</text>
+  <text x="120" y="142" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Supplier Quality Assurance • Vehicle Inspection &amp; PCR Management Engine</text>
+
+  <!-- 4 Module Cards -->
+  <!-- Card 1: PCR Management -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="185" width="250" height="180" rx="12" fill="#132142" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="85" y="225" fill="#ea580c" font-family="system-ui, sans-serif" font-size="14" font-weight="700">PCR LIFECYCLE</text>
+    <text x="85" y="250" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Supplier PCR Raised</text>
+    <text x="85" y="280" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Process Change Requests</text>
+    <text x="85" y="300" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Impact Analysis &amp; Signoff</text>
+    <rect x="85" y="325" width="110" height="24" rx="6" fill="#ea580c" fill-opacity="0.2"/>
+    <text x="140" y="341" fill="#ea580c" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">ACTIVE WORKFLOW</text>
+  </g>
+
+  <!-- Card 2: Vehicle Inspection -->
+  <g filter="url(#cardShadow)">
+    <rect x="340" y="185" width="250" height="180" rx="12" fill="#132142" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="365" y="225" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14" font-weight="700">INSPECTION SYSTEM</text>
+    <text x="365" y="250" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Vehicle Line Audit</text>
+    <text x="365" y="280" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Real-time Defect Logging</text>
+    <text x="365" y="300" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Quality Gateway Verification</text>
+    <rect x="365" y="325" width="120" height="24" rx="6" fill="#38bdf8" fill-opacity="0.2"/>
+    <text x="425" y="341" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">GATEWAY CHECKPOINTS</text>
+  </g>
+
+  <!-- Card 3: Die / Mould Process -->
+  <g filter="url(#cardShadow)">
+    <rect x="620" y="185" width="250" height="180" rx="12" fill="#132142" stroke="#10b981" stroke-width="1.5"/>
+    <text x="645" y="225" fill="#10b981" font-family="system-ui, sans-serif" font-size="14" font-weight="700">TOOLING &amp; DIES</text>
+    <text x="645" y="250" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Die/Mould Duplication</text>
+    <text x="645" y="280" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Tooling Approvals &amp; Trial</text>
+    <text x="645" y="300" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Supplier Compliance Check</text>
+    <rect x="645" y="325" width="120" height="24" rx="6" fill="#10b981" fill-opacity="0.2"/>
+    <text x="705" y="341" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">VERIFIED AUDIT</text>
+  </g>
+
+  <!-- Card 4: Supplier Analytics -->
+  <g filter="url(#cardShadow)">
+    <rect x="900" y="185" width="250" height="180" rx="12" fill="#132142" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="925" y="225" fill="#a855f7" font-family="system-ui, sans-serif" font-size="14" font-weight="700">SUPPLIER PORTAL</text>
+    <text x="925" y="250" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700">SQA Analytics</text>
+    <text x="925" y="280" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Vendor Quality Scores</text>
+    <text x="925" y="300" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Audit History &amp; SLA</text>
+    <rect x="925" y="325" width="110" height="24" rx="6" fill="#a855f7" fill-opacity="0.2"/>
+    <text x="980" y="341" fill="#a855f7" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">ENTERPRISE SLA</text>
+  </g>
+
+  <!-- Bottom Details Panel -->
+  <rect x="40" y="390" width="1120" height="270" rx="12" fill="#0f172a" stroke="#1e293b"/>
+  <text x="70" y="430" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Live Client Deliverable Overview: Suzuki SQA Management</text>
+  <text x="70" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Digital transformation solution connecting automotive suppliers with quality assurance engineers</text>
+
+  <!-- 3 Column summary -->
+  <rect x="70" y="480" width="320" height="150" rx="8" fill="#1e293b"/>
+  <text x="90" y="510" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="13" font-weight="700">TECHNICAL BA CONTRIBUTION</text>
+  <text x="90" y="535" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• End-to-end SDLC requirement gathering</text>
+  <text x="90" y="560" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Process flowcharts: PCR, Die/Mould, Vehicle</text>
+  <text x="90" y="585" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Stakeholder alignment with Suzuki SQA leads</text>
+  <text x="90" y="610" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Acceptance criteria &amp; sprint signoffs</text>
+
+  <rect x="430" y="480" width="320" height="150" rx="8" fill="#1e293b"/>
+  <text x="450" y="510" fill="#10b981" font-family="system-ui, sans-serif" font-size="13" font-weight="700">CORE MODULES</text>
+  <text x="450" y="535" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Supplier PCR submission &amp; tracking</text>
+  <text x="450" y="560" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Vehicle line quality inspection system</text>
+  <text x="450" y="585" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Die &amp; mould duplication approval audit</text>
+  <text x="450" y="610" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Role-based multi-tier approval gates</text>
+
+  <rect x="790" y="480" width="340" height="150" rx="8" fill="#1e293b"/>
+  <text x="810" y="510" fill="#ea580c" font-family="system-ui, sans-serif" font-size="13" font-weight="700">CLIENT URL &amp; STATUS</text>
+  <text x="810" y="538" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">https://suzukisqamanagement.in/</text>
+  <text x="810" y="565" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" font-weight="600">● Live In Production</text>
+  <text x="810" y="590" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Automotive Supplier Quality Platform</text>
+  <text x="810" y="610" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Click "Visit Live Website" to launch</text>
+</svg>

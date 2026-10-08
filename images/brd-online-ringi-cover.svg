@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGrad)" rx="12"/>
+  <rect x="50" y="50" width="700" height="500" rx="8" fill="#1e293b" stroke="#334155" stroke-width="4"/>
+  <text x="400" y="250" fill="#ffffff" font-family="system-ui, sans-serif" font-size="48" font-weight="800" text-anchor="middle">Online Ringi System</text>
+  <text x="400" y="320" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="32" font-weight="700" text-anchor="middle">Business Requirement Document</text>
+  <text x="400" y="400" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="20" font-weight="500" text-anchor="middle">Digital Approvals &amp; Consensus</text>
+  <rect x="300" y="450" width="200" height="40" rx="20" fill="#01875f"/>
+  <text x="400" y="475" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">PDF Document</text>
+</svg>

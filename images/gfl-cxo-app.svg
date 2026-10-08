@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101f"/>
+      <stop offset="100%" stop-color="#141d33"/>
+    </linearGradient>
+    <linearGradient id="playGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0086F8"/>
+      <stop offset="50%" stop-color="#00C4B4"/>
+      <stop offset="100%" stop-color="#FFD400"/>
+    </linearGradient>
+    <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Top Banner / Store Header -->
+  <rect x="0" y="0" width="1200" height="60" fill="#090d18"/>
+  <circle cx="35" cy="30" r="14" fill="#01875f"/>
+  <!-- Google Play style triangle -->
+  <polygon points="30,22 43,30 30,38" fill="#ffffff"/>
+  <text x="60" y="36" fill="#ffffff" font-family="system-ui, sans-serif" font-size="16" font-weight="800">Google Play</text>
+
+  <!-- Store URL Pill -->
+  <rect x="180" y="14" width="700" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="205" y="35" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">play.google.com/store/apps/details?id=com.gfl.cxo</text>
+  <rect x="760" y="20" width="105" height="20" rx="10" fill="#01875f" fill-opacity="0.2"/>
+  <text x="812" y="34" fill="#01875f" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">LIVE ON STORE</text>
+
+  <rect x="1000" y="14" width="160" height="32" rx="16" fill="#01875f"/>
+  <text x="1080" y="35" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">OFFICIAL APP</text>
+
+  <!-- Left: App Identity & Metadata -->
+  <g transform="translate(60, 100)">
+    <!-- App Icon -->
+    <rect x="0" y="0" width="110" height="110" rx="26" fill="#1e293b" stroke="#334155" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="12" y="12" width="86" height="86" rx="20" fill="url(#playGrad)"/>
+    <text x="55" y="65" fill="#ffffff" font-family="system-ui, sans-serif" font-size="36" font-weight="900" text-anchor="middle">CXO</text>
+
+    <!-- App Titles -->
+    <text x="135" y="35" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="800">GFL CXO Mobile App</text>
+    <text x="135" y="62" fill="#01875f" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Enterprise Executive Management Portal</text>
+    <text x="135" y="85" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Package: com.gfl.cxo • Android Production Release</text>
+
+    <!-- Star Ratings / Badges -->
+    <rect x="135" y="100" width="80" height="24" rx="6" fill="#1e293b"/>
+    <text x="175" y="116" fill="#facc15" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">★ 4.8 / 5.0</text>
+    
+    <rect x="225" y="100" width="110" height="24" rx="6" fill="#1e293b"/>
+    <text x="280" y="116" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Enterprise Ready</text>
+
+    <rect x="345" y="100" width="90" height="24" rx="6" fill="#1e293b"/>
+    <text x="390" y="116" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Production</text>
+  </g>
+
+  <!-- Left Bottom: Technical BA Scope -->
+  <rect x="60" y="270" width="680" height="380" rx="14" fill="#101930" stroke="#1e293b"/>
+  <text x="90" y="310" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Executive Mobile App Overview &amp; BA Contributions</text>
+  <text x="90" y="335" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Developed for C-level leadership to access real-time operational telemetry on mobile devices.</text>
+
+  <rect x="90" y="360" width="620" height="80" rx="10" fill="#1e293b"/>
+  <text x="110" y="390" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="13" font-weight="700">TECHNICAL BA RESPONSIBILITIES</text>
+  <text x="110" y="415" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Authored mobile BRD, screen user flows, and wireframes for iOS &amp; Android.</text>
+  <text x="110" y="432" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Coordinated API contract specifications with enterprise ERP backend teams.</text>
+
+  <rect x="90" y="455" width="620" height="80" rx="10" fill="#1e293b"/>
+  <text x="110" y="485" fill="#10b981" font-family="system-ui, sans-serif" font-size="13" font-weight="700">CORE APPLICATION CAPABILITIES</text>
+  <text x="110" y="510" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• Real-time plant &amp; operational KPI metrics tailored for executive decision-making.</text>
+  <text x="110" y="527" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">• 1-Click approval queues for high-value procurement requests and plant workflows.</text>
+
+  <rect x="90" y="550" width="620" height="75" rx="10" fill="#1e293b"/>
+  <text x="110" y="578" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="13" font-weight="700">GOOGLE PLAY STORE DEPLOYMENT</text>
+  <text x="110" y="602" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">URL: https://play.google.com/store/apps/details?id=com.gfl.cxo</text>
+
+  <!-- Right: Stylized Mobile Device Mockup -->
+  <g transform="translate(800, 100)" filter="url(#shadow)">
+    <!-- Device Frame -->
+    <rect x="0" y="0" width="320" height="550" rx="36" fill="#0f172a" stroke="#334155" stroke-width="4"/>
+    
+    <!-- Screen -->
+    <rect x="12" y="12" width="296" height="526" rx="26" fill="#090d18"/>
+    
+    <!-- Notch / Dynamic Island -->
+    <rect x="100" y="20" width="120" height="20" rx="10" fill="#1e293b"/>
+    <circle cx="195" cy="30" r="3" fill="#38bdf8"/>
+
+    <!-- App Content Inside Phone -->
+    <text x="32" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="800">CXO Dashboard</text>
+    <text x="32" y="92" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Real-time Operations</text>
+
+    <!-- KPI Card 1 -->
+    <rect x="30" y="110" width="260" height="70" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="45" y="135" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Monthly Production Output</text>
+    <text x="45" y="162" fill="#ffffff" font-family="system-ui, sans-serif" font-size="20" font-weight="800">98.4%</text>
+    <text x="210" y="162" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="700">+3.2%</text>
+
+    <!-- KPI Card 2 -->
+    <rect x="30" y="190" width="260" height="70" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="45" y="215" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Pending Executive Approvals</text>
+    <text x="45" y="242" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="20" font-weight="800">4 Items</text>
+    <text x="200" y="242" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Review</text>
+
+    <!-- Mini Chart inside phone -->
+    <rect x="30" y="270" width="260" height="150" rx="12" fill="#132142" stroke="#334155"/>
+    <text x="45" y="295" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Revenue &amp; Throughput</text>
+    <path d="M 45 380 Q 90 340, 140 350 T 210 320 T 270 310" fill="none" stroke="#01875f" stroke-width="3"/>
+    <circle cx="270" cy="310" r="4" fill="#01875f"/>
+
+    <!-- Bottom Button inside phone -->
+    <rect x="30" y="440" width="260" height="42" rx="12" fill="#01875f"/>
+    <text x="160" y="466" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">View on Google Play</text>
+  </g>
+</svg>

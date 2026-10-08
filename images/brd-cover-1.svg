@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b"/>
+      <stop offset="100%" stop-color="#1c2541"/>
+    </linearGradient>
+    <linearGradient id="accentOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5e14"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#coverBg)"/>
+  
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="16" height="1000" fill="url(#accentOrange)"/>
+  
+  <!-- OrangeMantra Badge -->
+  <rect x="60" y="60" width="300" height="36" rx="18" fill="#1e293b" stroke="#ff5e14" stroke-width="1.5"/>
+  <circle cx="80" cy="78" r="6" fill="#ff5e14"/>
+  <text x="96" y="83" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700">ORANGEMANTRA CANDIDATE SUBMISSION</text>
+
+  <!-- Header Category -->
+  <text x="60" y="160" fill="#ff5e14" font-family="system-ui, sans-serif" font-size="14" font-weight="800" letter-spacing="2">BUSINESS REQUIREMENT DOCUMENT (BRD)</text>
+  
+  <!-- Document Title -->
+  <text x="60" y="220" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34" font-weight="800">Omnichannel Order &amp;</text>
+  <text x="60" y="265" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34" font-weight="800">Inventory Sync Platform</text>
+  
+  <!-- Subtitle -->
+  <text x="60" y="315" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">Enterprise Specification &amp; Technical Requirements Specification v2.4</text>
+  
+  <line x1="60" y1="360" x2="740" y2="360" stroke="#334155" stroke-width="2"/>
+
+  <!-- Metadata Table -->
+  <text x="60" y="410" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" font-weight="700">AUTHOR / TECHNICAL BA</text>
+  <text x="60" y="435" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Vibhor</text>
+
+  <text x="320" y="410" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" font-weight="700">TARGET AUDIENCE</text>
+  <text x="320" y="435" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">OrangeMantra Technical Leadership</text>
+
+  <text x="60" y="490" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" font-weight="700">METHODOLOGY</text>
+  <text x="60" y="515" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Agile / Scrum with User Stories &amp; Gherkin BDD</text>
+
+  <text x="320" y="490" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" font-weight="700">STATUS &amp; CONFIDENTIALITY</text>
+  <text x="320" y="515" fill="#22c55e" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Approved for Evaluation</text>
+
+  <!-- Table of Contents Preview -->
+  <rect x="60" y="570" width="680" height="340" rx="12" fill="#132142" stroke="#334155"/>
+  <text x="90" y="615" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Table of Contents &amp; Scope Overview</text>
+  
+  <text x="90" y="660" fill="#ff5e14" font-family="system-ui, sans-serif" font-size="14" font-weight="600">1. Executive Summary &amp; Business Objectives</text>
+  <text x="680" y="660" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">Section 1.0</text>
+
+  <text x="90" y="700" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">2. Stakeholder RACI Matrix &amp; User Personas</text>
+  <text x="680" y="700" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">Section 2.0</text>
+
+  <text x="90" y="740" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">3. Scope Definition: In-Scope vs. Out-of-Scope</text>
+  <text x="680" y="740" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">Section 3.0</text>
+
+  <text x="90" y="780" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">4. Functional Specifications &amp; Epics (FR-101 to FR-185)</text>
+  <text x="680" y="780" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">Section 4.0</text>
+
+  <text x="90" y="820" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">5. Non-Functional Requirements (NFRs: Latency, Security, SLAs)</text>
+  <text x="680" y="820" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">Section 5.0</text>
+
+  <text x="90" y="860" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">6. Acceptance Criteria (BDD Given-When-Then Format)</text>
+  <text x="680" y="860" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">Section 6.0</text>
+
+  <!-- Footer -->
+  <text x="60" y="950" fill="#475569" font-family="system-ui, sans-serif" font-size="12">Authored for Technical BA Showcase • Live interactive spec available in portfolio</text>
+</svg>

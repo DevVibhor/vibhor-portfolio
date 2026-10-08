@@ -1,0 +1,70 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1829 >>
+stream
+BT /F1 22 Tf 50 740 Td (Solution Proposal: Microservices Migration) Tj ET
+BT /F2 13 Tf 50 715 Td (Technical Architecture & Modernization Blueprint) Tj ET
+BT /F2 10 Tf 50 685 Td (Author: Vibhor | Prepared for: OrangeMantra) Tj ET
+BT /F2 10 Tf 50 670 Td (Status: Approved for Technical Evaluation | Version: 2.4) Tj ET
+0.2 0.4 0.8 RG 2 w 50 655 m 550 655 l S
+BT /F1 14 Tf 50 620 Td (1.0 Problem Statement & Architecture Bottlenecks) Tj ET
+BT /F2 10 Tf 50 598 Td (The legacy monolithic e-commerce application experiences thread pool exhaustion during flash sales,) Tj ET
+BT /F2 10 Tf 50 582 Td (cascading database lockups, and tight coupling preventing independent team deployments.) Tj ET
+BT /F2 10 Tf 50 566 Td (Proposed solution: Event-driven microservices architecture leveraging Apache Kafka and Kong Gateway.) Tj ET
+BT /F1 14 Tf 50 535 Td (2.0 Proposed Target State Architecture) Tj ET
+BT /F2 10 Tf 50 513 Td (Edge Tier: Cloudflare CDN and Kong API Gateway handling rate limiting, WAF, and SSL offloading.) Tj ET
+BT /F2 10 Tf 50 497 Td (Application Core: Independent containerized services (Order, Inventory, Customer, Notifications).) Tj ET
+BT /F2 10 Tf 50 481 Td (Data Tier: Polyglot persistence (PostgreSQL for transactions, Redis for locks, Elastic for search).) Tj ET
+BT /F2 10 Tf 50 465 Td (Event Streaming: Kafka distributed log for decoupled asynchronous event propagation.) Tj ET
+BT /F1 14 Tf 50 434 Td (3.0 Phased Implementation Roadmap) Tj ET
+BT /F2 10 Tf 50 412 Td (Phase 1 (Weeks 1-4): Implement API Gateway and Strangler Fig proxy layer around the monolith.) Tj ET
+BT /F2 10 Tf 50 396 Td (Phase 2 (Weeks 5-8): Decouple Order & Inventory into microservices with Kafka CDC pipeline.) Tj ET
+BT /F2 10 Tf 50 380 Td (Phase 3 (Weeks 9-12): Implement OAuth 2.0 Identity Provider and decommission legacy monolith.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 671 >>
+stream
+BT /F1 16 Tf 50 740 Td (Solution Proposal: Microservices Migration - Detailed Specifications) Tj ET
+0.2 0.4 0.8 RG 1 w 50 725 m 550 725 l S
+BT /F1 13 Tf 50 690 Td (4.0 Cost-Benefit & ROI Analysis) Tj ET
+BT /F2 10 Tf 50 670 Td (Infrastructure cost optimization: 28% reduction in over-provisioned idle compute servers.) Tj ET
+BT /F2 10 Tf 50 655 Td (Operational efficiency: Mean-time-to-resolution (MTTR) reduced from 4 hours to under 15 minutes.) Tj ET
+BT /F2 10 Tf 50 640 Td (Deployment frequency: Increased from bi-weekly release windows to on-demand continuous deployment.) Tj ET
+BT /F2 9 Tf 50 50 Td (Vibhor - Technical Business Analyst Portfolio | Confidential) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000196 00000 n 
+0000000266 00000 n 
+0000000402 00000 n 
+0000002283 00000 n 
+0000002419 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+3141
+%%EOF

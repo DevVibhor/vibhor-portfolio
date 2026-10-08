@@ -1,0 +1,77 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1890 >>
+stream
+BT /F1 22 Tf 50 740 Td (BRD: Omnichannel Order & Inventory Platform) Tj ET
+BT /F2 13 Tf 50 715 Td (Business Requirement Document - Enterprise Spec v2.4) Tj ET
+BT /F2 10 Tf 50 685 Td (Author: Vibhor | Prepared for: OrangeMantra) Tj ET
+BT /F2 10 Tf 50 670 Td (Status: Approved for Technical Evaluation | Version: 2.4) Tj ET
+0.2 0.4 0.8 RG 2 w 50 655 m 550 655 l S
+BT /F1 14 Tf 50 620 Td (1.0 Business Context and Executive Summary) Tj ET
+BT /F2 10 Tf 50 598 Td (This project establishes a unified Omnichannel Order Orchestration and Real-time) Tj ET
+BT /F2 10 Tf 50 582 Td (Inventory Reconciliation Engine across e-commerce storefronts, mobile channels, and ERP.) Tj ET
+BT /F2 10 Tf 50 566 Td (Expected outcome: 40% reduction in fulfillment latency, zero inventory drift, 99.98% sync SLA.) Tj ET
+BT /F1 14 Tf 50 535 Td (2.0 Stakeholders and RACI Matrix) Tj ET
+BT /F2 10 Tf 50 513 Td (Product Sponsor: VP of Retail Operations (Accountable)) Tj ET
+BT /F2 10 Tf 50 497 Td (Technical BA: Vibhor (Responsible for requirements, specs, BDD criteria, and system flows)) Tj ET
+BT /F2 10 Tf 50 481 Td (Engineering Lead: Chief Architect (Consulted on API contracts and microservice latency limits)) Tj ET
+BT /F2 10 Tf 50 465 Td (QA and Compliance: Security & Regulatory Officer (Informed on tokenized payment PCI-DSS)) Tj ET
+BT /F1 14 Tf 50 434 Td (3.0 Functional Scope and User Stories) Tj ET
+BT /F2 10 Tf 50 412 Td (FR-101 [Soft Reservation]: When a customer reaches step 2 of checkout, reserve SKU for 15 min.) Tj ET
+BT /F2 10 Tf 50 396 Td (FR-102 [Distributed Concurrency]: Prevent overselling when concurrent checkouts exceed stock count.) Tj ET
+BT /F2 10 Tf 50 380 Td (FR-103 [Payment Webhook Idempotency]: Handle duplicate payment notifications without double-charging.) Tj ET
+BT /F2 10 Tf 50 364 Td (FR-104 [ERP Synchronization]: Push confirmed orders to SAP within 500ms via Kafka topic.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1262 >>
+stream
+BT /F1 16 Tf 50 740 Td (BRD: Omnichannel Order & Inventory Platform - Detailed Specifications) Tj ET
+0.2 0.4 0.8 RG 1 w 50 725 m 550 725 l S
+BT /F1 13 Tf 50 690 Td (4.0 Non-Functional Requirements (NFRs)) Tj ET
+BT /F2 10 Tf 50 670 Td (NFR-01 Performance: P99 latency for stock reservation under 120ms during peak 50,000 RPM load.) Tj ET
+BT /F2 10 Tf 50 655 Td (NFR-02 Availability: 99.99% high-availability multi-region active-active deployment on AWS.) Tj ET
+BT /F2 10 Tf 50 640 Td (NFR-03 Security: Full end-to-end TLS 1.3 encryption, OAuth 2.0 JWT bearer tokens, and PCI-DSS compliance.) Tj ET
+BT /F1 13 Tf 50 610 Td (5.0 BDD Acceptance Criteria (Given-When-Then)) Tj ET
+BT /F2 10 Tf 50 590 Td (Scenario: Concurrent purchase of final inventory unit) Tj ET
+BT /F2 10 Tf 50 575 Td (  Given SKU-1048 has an available stock quantity of 1) Tj ET
+BT /F2 10 Tf 50 560 Td (  When User A and User B trigger checkout confirmation within 50ms) Tj ET
+BT /F2 10 Tf 50 545 Td (  Then User A acquires the distributed Redis lock and receives Order Confirmation) Tj ET
+BT /F2 10 Tf 50 530 Td (  And User B receives an out-of-stock notification with an alternative recommendation.) Tj ET
+BT /F2 9 Tf 50 50 Td (Vibhor - Technical Business Analyst Portfolio | Confidential) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000196 00000 n 
+0000000266 00000 n 
+0000000402 00000 n 
+0000002344 00000 n 
+0000002480 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+3794
+%%EOF

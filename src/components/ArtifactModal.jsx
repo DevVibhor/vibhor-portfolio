@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Download, ExternalLink, ZoomIn, ZoomOut, RotateCcw, FileText, CheckCircle2, Shield, Calendar, Users, Cpu, Maximize2 } from 'lucide-react';
+import { X, Download, ExternalLink, Globe, ZoomIn, ZoomOut, RotateCcw, FileText, CheckCircle2, Shield, Calendar, Users, Cpu, Maximize2 } from 'lucide-react';
 
 export default function ArtifactModal({ artifact, onClose }) {
   const [activeTab, setActiveTab] = useState('viewer'); // 'viewer' or 'spec'
@@ -37,9 +37,11 @@ export default function ArtifactModal({ artifact, onClose }) {
             <div className="min-w-0">
               <h2 className="text-base sm:text-lg font-bold text-white truncate flex items-center gap-2">
                 {artifact.title}
-                <span className="text-xs font-normal text-slate-400 bg-slate-800 px-2 py-0.5 rounded">
-                  {artifact.version}
-                </span>
+                {artifact.version && (
+                  <span className="text-xs font-normal text-slate-400 bg-slate-800 px-2 py-0.5 rounded">
+                    {artifact.version}
+                  </span>
+                )}
               </h2>
               <p className="text-xs text-slate-400 hidden sm:block truncate">
                 {artifact.impact}
@@ -49,6 +51,20 @@ export default function ArtifactModal({ artifact, onClose }) {
 
           {/* Actions & Close */}
           <div className="flex items-center gap-2 shrink-0">
+            {artifact.liveUrl && (
+              <a
+                href={artifact.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-500/20 transition-all"
+                title="Open Live Client Website"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>Visit Live Site</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            )}
+
             <a
               href={artifact.fileUrl}
               target="_blank"
@@ -92,7 +108,7 @@ export default function ArtifactModal({ artifact, onClose }) {
                   : 'text-slate-400 hover:text-white hover:bg-slate-800'
               }`}
             >
-              {artifact.fileType === 'pdf' ? 'Interactive PDF Viewer' : 'Vector Diagram Canvas'}
+              {artifact.liveUrl ? 'Live Portal Overview' : (artifact.fileType === 'pdf' ? 'Interactive PDF Viewer' : 'Process Flow Diagram Canvas')}
             </button>
             <button
               onClick={() => setActiveTab('spec')}
@@ -107,7 +123,7 @@ export default function ArtifactModal({ artifact, onClose }) {
           </div>
 
           {/* Diagram Zoom Controls (only shown for viewer tab) */}
-          {activeTab === 'viewer' && (
+          {activeTab === 'viewer' && !artifact.liveUrl && (
             <div className="flex items-center gap-2">
               <span className="text-slate-500">Zoom: {zoomLevel}%</span>
               <button 
@@ -139,6 +155,24 @@ export default function ArtifactModal({ artifact, onClose }) {
         <div className="flex-1 overflow-auto bg-slate-950 p-4 sm:p-6">
           {activeTab === 'viewer' ? (
             <div className="w-full h-full flex flex-col items-center justify-center min-h-[450px]">
+              {artifact.liveUrl && (
+                <div className="w-full mb-4 p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/40 flex items-center justify-between flex-wrap gap-2 text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span className="text-slate-200">Active Client Platform: <strong className="text-emerald-300 underline">{artifact.liveUrl}</strong></span>
+                  </div>
+                  <a
+                    href={artifact.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition-all shadow-md"
+                  >
+                    <span>Launch Live Website</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              )}
+
               {artifact.fileType === 'pdf' ? (
                 /* PDF Viewer Embed */
                 <div className="w-full h-full flex flex-col">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, GitMerge, Cpu, Layout, Eye, Download, ExternalLink, Calendar, CheckCircle2 } from 'lucide-react';
+import { FileText, GitMerge, Cpu, Layout, Eye, Download, ExternalLink, Globe, CheckCircle2 } from 'lucide-react';
 
 export default function ArtifactCard({ artifact, onOpen }) {
   const getCategoryIcon = (cat) => {
@@ -33,19 +33,28 @@ export default function ArtifactCard({ artifact, onOpen }) {
           <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-slate-900/90 text-orange-400 border border-orange-500/30 backdrop-blur-md">
             {artifact.badge}
           </span>
-          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-900/80 text-slate-300 border border-slate-700/60 backdrop-blur-md">
-            {artifact.version}
-          </span>
+          {artifact.version && (
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-900/80 text-slate-300 border border-slate-700/60 backdrop-blur-md">
+              {artifact.version}
+            </span>
+          )}
         </div>
 
-        <div className="absolute top-3 right-3">
-          <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${
-            artifact.fileType === 'pdf' 
-              ? 'bg-red-500/20 text-red-300 border border-red-500/30' 
-              : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
-          }`}>
-            {artifact.fileType === 'pdf' ? 'Embedded PDF' : 'Vector Diagram'}
-          </span>
+        <div className="absolute top-3 right-3 flex items-center gap-1.5">
+          {artifact.liveUrl ? (
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Live Website
+            </span>
+          ) : (
+            <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider ${
+              artifact.fileType === 'pdf' 
+                ? 'bg-red-500/20 text-red-300 border border-red-500/30' 
+                : 'bg-blue-500/20 text-blue-300 border border-blue-500/30'
+            }`}>
+              {artifact.fileType === 'pdf' ? 'Embedded PDF' : 'Process Flow'}
+            </span>
+          )}
         </div>
 
         {/* Hover overlay hint */}
@@ -80,15 +89,17 @@ export default function ArtifactCard({ artifact, onOpen }) {
           </p>
 
           {/* Key Deliverables Highlights */}
-          <div className="mt-4 pt-3 border-t border-slate-800/80 space-y-1.5">
-            <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Key Deliverables</div>
-            {artifact.highlights.slice(0, 2).map((item, idx) => (
-              <div key={idx} className="flex items-start gap-1.5 text-xs text-slate-400">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="line-clamp-1">{item}</span>
-              </div>
-            ))}
-          </div>
+          {artifact.highlights && artifact.highlights.length > 0 && (
+            <div className="mt-4 pt-3 border-t border-slate-800/80 space-y-1.5">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Key Deliverables</div>
+              {artifact.highlights.slice(0, 2).map((item, idx) => (
+                <div key={idx} className="flex items-start gap-1.5 text-xs text-slate-400">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="line-clamp-1">{item}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Footer Area: Tools & Action */}
@@ -107,19 +118,32 @@ export default function ArtifactCard({ artifact, onOpen }) {
               className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-bold bg-slate-800 hover:bg-orange-500 hover:text-white text-slate-200 border border-slate-700/80 transition-all cursor-pointer"
             >
               <Eye className="w-3.5 h-3.5" />
-              <span>Open Document Viewer</span>
+              <span>View Details</span>
             </button>
 
-            <a
-              href={artifact.fileUrl}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-orange-400 transition-colors"
-              title="Direct Download File"
-            >
-              <Download className="w-3.5 h-3.5" />
-            </a>
+            {artifact.liveUrl ? (
+              <a
+                href={artifact.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-500/20 transition-all"
+                title="Open Live Website"
+              >
+                <span>Live Site</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            ) : (
+              <a
+                href={artifact.fileUrl}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-orange-400 transition-colors"
+                title="Direct Download File"
+              >
+                <Download className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
         </div>
       </div>

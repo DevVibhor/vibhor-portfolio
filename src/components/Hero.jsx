@@ -37,28 +37,6 @@ export default function Hero() {
           {PERSONAL_INFO.bio}
         </p>
 
-        {/* Profile Links: LinkedIn & GitHub */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
-          <a
-            href={PERSONAL_INFO.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-blue-500/60 transition-all text-sm font-semibold shadow-md group hover:-translate-y-0.5"
-          >
-            <LinkedinIcon />
-            <span>LinkedIn</span>
-          </a>
-
-          <a
-            href={PERSONAL_INFO.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-500 transition-all text-sm font-semibold shadow-md group hover:-translate-y-0.5"
-          >
-            <GithubIcon />
-            <span>GitHub</span>
-          </a>
-        </div>
       </div>
     </section>
   );

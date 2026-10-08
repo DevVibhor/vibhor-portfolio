@@ -37,15 +37,7 @@ export default function ArtifactModal({ artifact, onClose }) {
             <div className="min-w-0">
               <h2 className="text-base sm:text-lg font-bold text-white truncate flex items-center gap-2">
                 {artifact.title}
-                {artifact.version && (
-                  <span className="text-xs font-normal text-slate-400 bg-slate-800 px-2 py-0.5 rounded">
-                    {artifact.version}
-                  </span>
-                )}
               </h2>
-              <p className="text-xs text-slate-400 hidden sm:block truncate">
-                {artifact.impact}
-              </p>
             </div>
           </div>
 
@@ -98,29 +90,7 @@ export default function ArtifactModal({ artifact, onClose }) {
 
         {/* Subheader: Tabs & Zoom Controls */}
         <div className="px-6 py-2.5 bg-slate-950/60 border-b border-slate-800/80 flex items-center justify-between flex-wrap gap-2 text-xs">
-          {/* Tabs */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setActiveTab('viewer')}
-              className={`px-3 py-1.5 rounded-lg font-semibold transition-all ${
-                activeTab === 'viewer'
-                  ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              {artifact.liveUrl ? 'Live Portal Overview' : (artifact.fileType === 'pdf' ? 'Interactive PDF Viewer' : 'Process Flow Diagram Canvas')}
-            </button>
-            <button
-              onClick={() => setActiveTab('spec')}
-              className={`px-3 py-1.5 rounded-lg font-semibold transition-all ${
-                activeTab === 'spec'
-                  ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800'
-              }`}
-            >
-              Structured Requirements &amp; Scope Details
-            </button>
-          </div>
+         
 
           {/* Diagram Zoom Controls (only shown for viewer tab) */}
           {activeTab === 'viewer' && !artifact.liveUrl && (
@@ -272,19 +242,6 @@ export default function ArtifactModal({ artifact, onClose }) {
           )}
         </div>
 
-        {/* Modal Footer */}
-        <div className="px-6 py-3 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span>Document Verified • Technical Business Analyst Portfolio</span>
-          </div>
-          <button
-            onClick={onClose}
-            className="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition-colors"
-          >
-            Close Viewer
-          </button>
-        </div>
       </div>
     </div>
   );

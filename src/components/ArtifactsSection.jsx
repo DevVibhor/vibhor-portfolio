@@ -13,7 +13,7 @@ export default function ArtifactsSection({ selectedCategory, onSelectCategory, o
       const matchesSearch = !q || (
         item.title.toLowerCase().includes(q) ||
         item.summary.toLowerCase().includes(q) ||
-        item.categoryName.toLowerCase().includes(q) ||
+        (item.categoryName || item.category || '').toLowerCase().includes(q) ||
         item.tools.some(t => t.toLowerCase().includes(q)) ||
         item.highlights.some(h => h.toLowerCase().includes(q))
       );

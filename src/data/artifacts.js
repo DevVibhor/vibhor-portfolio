@@ -23,8 +23,6 @@ export const ARTIFACTS = [
     id: 'suzuki-sqa-platform',
     title: 'Suzuki SQA Management',
     category: 'design',
-    categoryName: 'Live Client Website',
-    badge: 'Live Production Platform',
     version: 'Live v3.2',
     date: 'Active Production',
     status: 'Live In Production',
@@ -63,8 +61,6 @@ export const ARTIFACTS = [
     id: 'flow-pcr-supplier',
     title: 'PCR raised by Supplier',
     category: 'flow',
-    categoryName: 'Process Flow & BPMN Diagram',
-    badge: 'SQA Process Flow',
     version: 'Approved Spec',
     date: 'Suzuki SQA System',
     status: 'Approved',
@@ -98,8 +94,6 @@ export const ARTIFACTS = [
     id: 'flow-vehicle-inspection',
     title: 'Vehicle Inspection System',
     category: 'flow',
-    categoryName: 'Process Flow & System Architecture',
-    badge: 'System Architecture Flow',
     version: 'Production Flow',
     date: 'Suzuki SQA System',
     status: 'Approved',
@@ -131,10 +125,8 @@ export const ARTIFACTS = [
   // 4. Process Flow 3: Die:Mould Duplication Process Flow
   {
     id: 'flow-die-mould',
-    title: 'Die:Mould Duplication Process Flow',
+    title: 'Die/Mould Duplication Process Flow',
     category: 'flow',
-    categoryName: 'Process Flow & BPMN Diagram',
-    badge: 'Tooling Quality Flow',
     version: 'Approved Spec',
     date: 'Suzuki SQA System',
     status: 'Approved',
@@ -163,76 +155,95 @@ export const ARTIFACTS = [
     ]
   },
 
-  // 5. BRD: Omnichannel Platform
+  // 7. Live Mobile App Deliverable
   {
-    id: 'brd-omnichannel',
-    title: 'Omnichannel Order & Inventory Sync Platform',
-    category: 'brd',
-    categoryName: 'Business Requirement Document (BRD)',
-    badge: 'Core Enterprise Spec',
-    version: 'v2.4',
-    date: 'October 2026',
-    status: 'Ready for Review',
-    fileType: 'pdf',
-    fileUrl: 'artifacts/brd-omnichannel-platform.pdf',
-    previewImage: 'images/brd-cover-1.svg',
-    summary: 'A comprehensive, enterprise-grade Business Requirement Document outlining an omnichannel order management and soft-reservation inventory engine across physical stores, mobile apps, and e-commerce storefronts.',
-    impact: 'Engineered to reduce inventory discrepancies by 98% and achieve sub-120ms stock allocation during peak transaction concurrency.',
-    tools: ['Confluence', 'Jira', 'Draw.io', 'Postman'],
-    stakeholders: ['VP Retail Operations', 'Chief Architect', 'Warehouse Management Lead'],
-    highlights: [
-      'Distributed soft reservation mechanism with 15-minute expiration lock',
-      'Idempotent payment webhook intake with automatic replay safety',
-      'Asynchronous Kafka event topic definition for SAP ERP updates',
-      'BDD Acceptance criteria in Gherkin syntax (Given-When-Then)'
-    ],
-    sections: [
-      {
-        heading: '1. Executive Summary & Business Need',
-        content: 'Retailers face stockouts and double-selling during flash traffic surges. This BRD formalizes a centralized order orchestrator with distributed Redis concurrency locks and real-time ERP reconciliation.'
-      },
-      {
-        heading: '2. Functional Scope (Epics)',
-        content: '• FR-101: Real-time stock decrement with sub-50ms latency\n• FR-102: Split-shipment logic based on geo-proximity of fulfillment centers\n• FR-103: Automated refund trigger upon failed 3DS payment gateway authorization\n• FR-104: Comprehensive audit ledger capturing every inventory mutation.'
-      }
-    ]
-  },
-
-  // 6. Solution Proposal: Microservices
-  {
-    id: 'solution-microservices',
-    title: 'Monolith Decoupling into Event-Driven Microservices',
-    category: 'solution',
-    categoryName: 'Solution Proposal',
-    badge: 'Cloud Architecture',
-    version: 'v3.0',
-    date: 'October 2026',
-    status: 'Proposed',
+    id: 'gfl-cxo-app',
+    title: 'GFL CXO Mobile App',
+    category: 'design',
+    version: 'Production Release',
+    date: 'Active Production',
+    status: 'Live on Google Play',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.gfl.cxo&hl=en_IN',
     fileType: 'image',
-    fileUrl: 'images/solution-arch-diagram.svg',
-    pdfFallback: 'artifacts/solution-proposal-microservices.pdf',
-    previewImage: 'images/solution-arch-diagram.svg',
-    summary: 'A comprehensive technical solution proposal outlining the phased Strangler Fig migration of an enterprise monolithic core into independent, cloud-native microservices with Kong API Gateway and Kafka.',
-    impact: 'Projects a 4x increase in release velocity, zero single-point-of-failure downtimes, and a 28% reduction in cloud infrastructure spend.',
-    tools: ['AWS Architecture', 'Kafka', 'Kong API Gateway', 'Docker/K8s'],
-    stakeholders: ['CTO', 'Head of Engineering', 'DevOps & Infrastructure Lead'],
+    fileUrl: 'images/gfl-cxo-app.svg',
+    previewImage: 'images/gfl-cxo-app.svg',
+    summary: 'Live enterprise mobile application deployed on Google Play Store for CXO-level executives, providing real-time business insights, approval workflows, and executive dashboards.',
+    impact: 'Developed for C-level leadership to access real-time operational telemetry on mobile devices.',
+    tools: ['React Native', 'Mobile SDLC', 'Executive Dashboards', 'Android'],
+    stakeholders: ['CXO Executives', 'Business Leadership', 'Operations'],
     highlights: [
-      'Domain-Driven Design (DDD) bounded contexts for Users, Orders, Catalog, and Billing',
-      'Strangler Fig migration pattern enabling zero-downtime progressive cutover',
-      'Centralized Kong Gateway handling rate-limiting, JWT validation, and CORS',
-      'Debezium CDC (Change Data Capture) synchronizing data from legacy databases'
+      'Live in production on Google Play Store',
+      'Real-time plant & operational KPI metrics tailored for executive decision-making',
+      '1-Click approval queues for high-value procurement requests and plant workflows',
+      'Optimized for mobile enterprise performance'
     ],
     sections: [
       {
-        heading: 'Problem Statement & Bottlenecks',
-        content: 'The existing monolith suffered from thread pool exhaustion during promotional bursts, tightly coupled database schema migrations, and risky monthly deployment cycles.'
+        heading: '1. Executive Mobile App Overview',
+        content: 'Developed for C-level leadership to access real-time operational telemetry on mobile devices. Active production mobile application deployed on the Google Play Store designed to digitize executive decision-making, operational oversight, and key performance metric tracking.'
       },
       {
-        heading: 'Proposed Solution Architecture',
-        content: 'Deconstruct domain logic into isolated microservices behind a unified API gateway. Implement asynchronous event streaming with Apache Kafka for non-blocking transactions and data lake ingestion.'
+        heading: '2. Technical BA Responsibilities',
+        content: '• Authored mobile BRD, screen user flows, and wireframes for iOS & Android.\n• Coordinated API contract specifications with enterprise ERP backend teams.\n• Designed system workflows and user acceptance criteria (UAT) for mobile developers.'
+      },
+      {
+        heading: '3. Core Application Capabilities',
+        content: '• Real-time plant & operational KPI metrics tailored for executive decision-making.\n• 1-Click approval queues for high-value procurement requests and plant workflows.\n• Offline Capability: Cached data access for seamless executive travel.'
       }
     ]
   },
 
-  
+  // 8. BRD: Online Ringi System
+  {
+    id: 'brd-online-ringi',
+    title: 'Online Ringi System BRD',
+    category: 'brd',
+    version: 'Final',
+    date: '2026',
+    status: 'Completed',
+    fileType: 'pdf',
+    fileUrl: 'brd/Sanitized - BRD - Online Ringi System.pdf',
+    previewImage: 'images/brd-online-ringi-cover.svg',
+    summary: 'A Business Requirement Document detailing the Online Ringi System for streamlined digital approvals and consensus building.',
+    impact: 'Digitized internal proposal and approval workflows, enhancing organizational efficiency and auditability.',
+    tools: ['BRD', 'Workflow Analysis', 'Requirement Gathering', 'Process Modeling'],
+    stakeholders: ['Internal Management', 'Department Heads', 'Process Owners'],
+    highlights: [
+      'Digital Ringi workflow implementation',
+      'Approval routing and consensus tracking'
+    ],
+    sections: [
+      {
+        heading: '1. Overview',
+        content: 'This BRD covers the digitization of the traditional Ringi approval process, focusing on seamless electronic document circulation, secure sign-offs, and consensus building among key stakeholders.'
+      }
+    ]
+  },
+
+  // 9. Solution Proposal: PI DMS
+  {
+    id: 'solution-pi-dms',
+    title: 'PI DMS Solution Proposal',
+    category: 'solution',
+    version: 'Final',
+    date: '2026',
+    status: 'Proposed',
+    fileType: 'pdf',
+    fileUrl: 'solution/Sanitized - Solution Proposal - PI DMS.pdf',
+    previewImage: 'images/solution-pi-dms-cover.svg',
+    summary: 'A comprehensive solution proposal for the PI Document Management System (DMS), outlining architecture, core features, and implementation strategy.',
+    impact: 'Proposed a scalable document management architecture to improve enterprise content retrieval, version control, and compliance.',
+    tools: ['Solution Architecture', 'DMS', 'Enterprise Content Management'],
+    stakeholders: ['IT Leadership', 'Operations', 'Compliance Officers'],
+    highlights: [
+      'Proposed scalable Document Management System (DMS) architecture',
+      'Secure document storage and compliance workflows'
+    ],
+    sections: [
+      {
+        heading: '1. Solution Overview',
+        content: 'Detailed technical and functional proposal for implementing a centralized Document Management System (DMS) to handle secure document storage, advanced versioning, access control, and regulatory compliance.'
+      }
+    ]
+  }
 ];

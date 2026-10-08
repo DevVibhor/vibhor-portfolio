@@ -63,9 +63,6 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-slate-500">
-            <span>© {new Date().getFullYear()} {PERSONAL_INFO.name}. Built custom for <strong>{PERSONAL_INFO.targetCompany}</strong>.</span>
-          </div>
 
           <div className="flex items-center gap-4 text-slate-400">
             <span className="flex items-center gap-1.5 text-xs">

@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
 export const CATEGORIES = [
   { id: 'all', name: 'All Deliverables' },
   { id: 'flow', name: 'Process Flows' },
-  { id: 'design', name: 'Website Designs & Live Projects' },
+  { id: 'design', name: 'Live Project URL' },
   { id: 'brd', name: 'BRDs' },
   { id: 'solution', name: 'Solution Proposals' }
 ];
@@ -234,34 +234,5 @@ export const ARTIFACTS = [
     ]
   },
 
-  // 7. Website Design: Operations Console
-  {
-    id: 'design-dashboard',
-    title: 'Nexus Enterprise Operations & SLA Analytics Console',
-    category: 'design',
-    categoryName: 'Website & UI/UX Design',
-    badge: 'High-Fidelity Wireframe & UX',
-    version: 'v1.4',
-    date: 'October 2026',
-    status: 'Interactive Spec',
-    fileType: 'image',
-    fileUrl: 'images/website-design-dashboard.svg',
-    previewImage: 'images/website-design-dashboard.svg',
-    summary: 'Enterprise web application design for operations managers and technical analysts to monitor real-time order throughput, webhook deliveries, system health, and SLA compliance.',
-    impact: 'Reduces operational MTTR by 65% by centralizing key incident metrics, dead-letter queue (DLQ) alerts, and live event telemetry into a unified pane.',
-    tools: ['Figma', 'Tailwind CSS', 'Design Systems', 'User Journey Mapping'],
-    stakeholders: ['Operations Lead', 'B2B Account Managers', 'Frontend Tech Lead'],
-    highlights: [
-      'Information architecture optimized for high-density enterprise data ingestion',
-      'Live metric cards with percentage trends and dynamic health indicators',
-      'Real-time throughput area chart showcasing 24-hour volume velocity',
-      'Side-rail live webhook monitor with instant status color coding'
-    ],
-    sections: [
-      {
-        heading: 'Design Rationale & Usability Principles',
-        content: 'Designed with a high-contrast dark theme to prevent eye fatigue during continuous control-room shifts. Critical status metrics utilize WCAG AAA compliant color contrasts.'
-      }
-    ]
-  }
+  
 ];

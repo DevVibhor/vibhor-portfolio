@@ -3,10 +3,10 @@ export const PERSONAL_INFO = {
   targetRole: "Technical Business Analyst",
   targetCompany: "OrangeMantra",
   tagline: "Bridging Enterprise Business Needs with Scalable Technical Architecture & AI-Accelerated Engineering",
-  bio: "Passionate Technical Business Analyst with expertise in translating intricate business requirements into precise technical specifications, BPMN process flows, API contracts, and high-fidelity solution blueprints. Proficient in leveraging modern Generative AI tooling for rapid prototyping and requirements validation.",
-  email: "vibhor.ba@example.com", // easily customizable
-  linkedin: "https://www.linkedin.com/",
-  github: "https://github.com/",
+  bio: "Technical Business Analyst | 6 Years IT Experience | Requirements to Delivery | SDLC | Requirement Gathering | BRD | Mobile App Development",
+  email: "vibhorkshp7@example.com", // easily customizable
+  linkedin: "https://www.linkedin.com/in/vibhor-kashyap/",
+  github: "https://github.com/DevVibhor",
 };
 
 export const CATEGORIES = [

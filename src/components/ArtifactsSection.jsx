@@ -27,16 +27,10 @@ export default function ArtifactsSection({ selectedCategory, onSelectCategory, o
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-xs font-semibold text-orange-400 mb-2">
-              <Layers className="w-3.5 h-3.5" />
-              <span>Evaluated Artifacts Repository</span>
-            </div>
+
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Business &amp; Technical Deliverables
+              Deliverables
             </h2>
-            <p className="text-sm text-slate-400 mt-1 max-w-xl">
-              Inspect full Business Requirement Documents (BRDs), BPMN swimlane process flows, microservices proposals, and website design specifications.
-            </p>
           </div>
 
           {/* Search Box */}

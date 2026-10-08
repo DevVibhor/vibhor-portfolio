@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
 import Hero from './components/Hero';
-import OrangeMantraCallout from './components/OrangeMantraCallout';
 import ArtifactsSection from './components/ArtifactsSection';
 import Footer from './components/Footer';
 import ArtifactModal from './components/ArtifactModal';
@@ -26,26 +24,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#080d1a] text-slate-100 flex flex-col selection:bg-orange-500 selection:text-white">
-      {/* Sticky Header with navigation & OrangeMantra badge */}
-      <Header
-        activeCategory={selectedCategory}
-        onSelectCategory={handleSelectCategory}
-        onOpenAiInfo={() => setAiInfoOpen(true)}
-      />
-
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Homepage Hero: Bio + Direct Hyperlinks below */}
         <Hero
           onSelectCategory={handleSelectCategory}
-          onOpenAiInfo={() => setAiInfoOpen(true)}
         />
 
-        {/* Personalized OrangeMantra Interview Section */}
-        <OrangeMantraCallout
-          onOpenDetails={() => setAiInfoOpen(true)}
-        />
-
-        {/* Evaluated Deliverables / Artifacts Section */}
+        {/* Artifacts Repository: BRDs, Process Flow, Solution Proposal, Website Designs */}
         <ArtifactsSection
           selectedCategory={selectedCategory}
           onSelectCategory={handleSelectCategory}
@@ -66,7 +51,7 @@ export default function App() {
         />
       )}
 
-      {/* AI Prototyping & Technical Context Modal */}
+      {/* AI Prototyping Modal */}
       <AiContextModal
         isOpen={aiInfoOpen}
         onClose={() => setAiInfoOpen(false)}

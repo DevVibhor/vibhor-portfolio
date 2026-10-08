@@ -3,8 +3,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import OrangeMantraCallout from './components/OrangeMantraCallout';
 import ArtifactsSection from './components/ArtifactsSection';
-import WorkflowSection from './components/WorkflowSection';
-import AboutMe from './components/AboutMe';
 import Footer from './components/Footer';
 import ArtifactModal from './components/ArtifactModal';
 import AiContextModal from './components/AiContextModal';
@@ -53,12 +51,6 @@ export default function App() {
           onSelectCategory={handleSelectCategory}
           onOpenArtifact={handleOpenArtifact}
         />
-
-        {/* Technical BA Delivery Methodology */}
-        <WorkflowSection />
-
-        {/* About Vibhor & Competencies */}
-        <AboutMe />
       </main>
 
       {/* Footer & Contact */}

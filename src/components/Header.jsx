@@ -6,12 +6,10 @@ export default function Header({ activeCategory, onSelectCategory, onOpenAiInfo 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'About', id: 'about' },
     { label: 'BRDs', category: 'brd', icon: FileText },
     { label: 'Process Flow', category: 'flow', icon: GitMerge },
     { label: 'Solution Proposal', category: 'solution', icon: Cpu },
     { label: 'Website Designs', category: 'design', icon: Layout },
-    { label: 'Methodology', id: 'workflow' },
   ];
 
   const handleNavClick = (item) => {

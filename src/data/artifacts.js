@@ -3,34 +3,10 @@ export const PERSONAL_INFO = {
   targetRole: "Technical Business Analyst",
   targetCompany: "OrangeMantra",
   tagline: "Bridging Enterprise Business Needs with Scalable Technical Architecture & AI-Accelerated Engineering",
-  bio: "Passionate Technical Business Analyst with expertise in translating intricate business requirements into precise technical specifications, BPMN process flows, API contracts, and high-fidelity solution blueprints. Proficient in leveraging modern Generative AI tooling to accelerate requirement gathering, data modeling, and rapid prototype validation.",
+  bio: "Passionate Technical Business Analyst with expertise in translating intricate business requirements into precise technical specifications, BPMN process flows, API contracts, and high-fidelity solution blueprints. Proficient in leveraging modern Generative AI tooling for rapid prototyping and requirements validation.",
   email: "vibhor.ba@example.com", // easily customizable
   linkedin: "https://www.linkedin.com/",
   github: "https://github.com/",
-  experienceYears: "5+",
-  stats: [
-    { label: "BRDs & Specs Authored", value: "35+" },
-    { label: "BPMN & System Flows", value: "50+" },
-    { label: "Architecture Proposals", value: "18+" },
-    { label: "Stakeholder Alignment", value: "100%" }
-  ],
-  coreCompetencies: [
-    { title: "Requirements Engineering", desc: "BRD, FRD, SRS, User Stories (Gherkin BDD), and Scope Boundary RACI definitions." },
-    { title: "System Modeling & BPMN", desc: "End-to-end swimlane process flows, UML sequence diagrams, and microservice interaction blueprints." },
-    { title: "Technical Solution Design", desc: "API payload design (REST/GraphQL), event-driven schemas (Kafka), and database ERDs." },
-    { title: "AI-Augmented Prototyping", desc: "Using AI to rapidly build live prototypes, validate UI/UX assumptions, and verify API feasibility." },
-    { title: "Agile & Scrum Delivery", desc: "Sprint backlog grooming, sprint planning, Jira/Confluence administration, and acceptance criteria signoff." }
-  ],
-  tools: [
-    "Jira & Confluence",
-    "Figma & Miro",
-    "Draw.io & Lucidchart",
-    "Postman & OpenAPI/Swagger",
-    "SQL (PostgreSQL / MySQL)",
-    "BPMN 2.0 & UML",
-    "React & Tailwind CSS",
-    "AI Development Tools"
-  ]
 };
 
 export const CATEGORIES = [
@@ -244,28 +220,5 @@ export const ARTIFACTS = [
         content: 'All incoming webhook payloads require a signed timestamp and HMAC digest. Replay attacks older than 300 seconds are rejected automatically at the gateway tier.'
       }
     ]
-  }
-];
-
-export const WORKFLOW_STEPS = [
-  {
-    step: "01",
-    title: "Discovery & Stakeholder Alignment",
-    desc: "Facilitating structured workshops, conducting gap analysis, and extracting core business objectives to author crystal-clear BRDs and RACI matrices."
-  },
-  {
-    step: "02",
-    title: "System Flowcharting & BPMN Modeling",
-    desc: "Transforming complex business rules into visual swimlane diagrams, UML sequence flows, and edge-case decision trees that developers love."
-  },
-  {
-    step: "03",
-    title: "Technical Architecture & API Contracts",
-    desc: "Defining REST/GraphQL endpoints, event payloads, data models (ERDs), and non-functional requirements (NFRs) for seamless engineering handoff."
-  },
-  {
-    step: "04",
-    title: "AI-Augmented Prototyping & Validation",
-    desc: "Using modern AI coding workflows to build functional React prototypes, verifying user experience assumptions and technical feasibility before sprint kickoff."
   }
 ];

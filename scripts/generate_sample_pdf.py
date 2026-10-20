@@ -11,7 +11,7 @@ def create_simple_pdf(filename, title, subtitle, author, sections):
     c1 = []
     c1.append("BT /F1 22 Tf 50 740 Td (" + title + ") Tj ET")
     c1.append("BT /F2 13 Tf 50 715 Td (" + subtitle + ") Tj ET")
-    c1.append("BT /F2 10 Tf 50 685 Td (Author: " + author + " | Prepared for: OrangeMantra) Tj ET")
+    c1.append("BT /F2 10 Tf 50 685 Td (Author: " + author + " | Technical BA Portfolio Spec) Tj ET")
     c1.append("BT /F2 10 Tf 50 670 Td (Status: Approved for Technical Evaluation | Version: 2.4) Tj ET")
     
     # Line divider

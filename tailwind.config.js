@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,28 +9,27 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c', // OrangeMantra brand accent
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+          950: '#1e1b4b',
         },
-        om: {
-          orange: '#FF5E14',
-          navy: '#0B132B',
-          slate: '#1C2541',
-          surface: '#0F172A',
-          card: '#1E293B',
-          border: '#334155',
+        accent: {
+          blue: '#2563eb',
+          cyan: '#06b6d4',
+          sky: '#0284c7',
+          emerald: '#10b981',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
       }
     },
   },

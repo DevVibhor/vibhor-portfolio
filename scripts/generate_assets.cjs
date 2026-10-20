@@ -18,9 +18,9 @@ const processFlowSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120
       <stop offset="0%" stop-color="#1e293b"/>
       <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
-    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff5e14"/>
-      <stop offset="100%" stop-color="#f97316"/>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
@@ -34,7 +34,7 @@ const processFlowSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120
   <text x="50" y="70" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="24" font-weight="700">Order Fulfillment &amp; Inventory Synchronization Engine</text>
   <text x="50" y="98" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">End-to-End BPMN 2.0 Process Flow • Technical Business Analyst Architecture Map</text>
   
-  <rect x="1000" y="48" width="150" height="32" rx="16" fill="url(#orangeGrad)"/>
+  <rect x="1000" y="48" width="150" height="32" rx="16" fill="url(#indigoGrad)"/>
   <text x="1075" y="69" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">ACTIVE SPEC v2.4</text>
 
   <!-- Swimlanes -->
@@ -350,24 +350,24 @@ const brdCoverSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 10
       <stop offset="0%" stop-color="#0b132b"/>
       <stop offset="100%" stop-color="#1c2541"/>
     </linearGradient>
-    <linearGradient id="accentOrange" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff5e14"/>
-      <stop offset="100%" stop-color="#f97316"/>
+    <linearGradient id="accentPrimary" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
   </defs>
 
   <rect width="800" height="1000" fill="url(#coverBg)"/>
   
   <!-- Left accent bar -->
-  <rect x="0" y="0" width="16" height="1000" fill="url(#accentOrange)"/>
+  <rect x="0" y="0" width="16" height="1000" fill="url(#accentPrimary)"/>
   
-  <!-- OrangeMantra Badge -->
-  <rect x="60" y="60" width="300" height="36" rx="18" fill="#1e293b" stroke="#ff5e14" stroke-width="1.5"/>
-  <circle cx="80" cy="78" r="6" fill="#ff5e14"/>
-  <text x="96" y="83" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700">ORANGEMANTRA CANDIDATE SUBMISSION</text>
+  <!-- Document Badge -->
+  <rect x="60" y="60" width="310" height="36" rx="18" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <circle cx="80" cy="78" r="6" fill="#6366f1"/>
+  <text x="96" y="83" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700">TECHNICAL SPECIFICATION DELIVERABLE</text>
 
   <!-- Header Category -->
-  <text x="60" y="160" fill="#ff5e14" font-family="system-ui, sans-serif" font-size="14" font-weight="800" letter-spacing="2">BUSINESS REQUIREMENT DOCUMENT (BRD)</text>
+  <text x="60" y="160" fill="#818cf8" font-family="system-ui, sans-serif" font-size="14" font-weight="800" letter-spacing="2">BUSINESS REQUIREMENT DOCUMENT (BRD)</text>
   
   <!-- Document Title -->
   <text x="60" y="220" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34" font-weight="800">Omnichannel Order &amp;</text>
@@ -383,7 +383,7 @@ const brdCoverSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 10
   <text x="60" y="435" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Vibhor</text>
 
   <text x="320" y="410" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" font-weight="700">TARGET AUDIENCE</text>
-  <text x="320" y="435" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">OrangeMantra Technical Leadership</text>
+  <text x="320" y="435" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Enterprise Technical Leadership</text>
 
   <text x="60" y="490" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" font-weight="700">METHODOLOGY</text>
   <text x="60" y="515" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Agile / Scrum with User Stories &amp; Gherkin BDD</text>
@@ -395,7 +395,7 @@ const brdCoverSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 10
   <rect x="60" y="570" width="680" height="340" rx="12" fill="#132142" stroke="#334155"/>
   <text x="90" y="615" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Table of Contents &amp; Scope Overview</text>
   
-  <text x="90" y="660" fill="#ff5e14" font-family="system-ui, sans-serif" font-size="14" font-weight="600">1. Executive Summary &amp; Business Objectives</text>
+  <text x="90" y="660" fill="#818cf8" font-family="system-ui, sans-serif" font-size="14" font-weight="600">1. Executive Summary &amp; Business Objectives</text>
   <text x="680" y="660" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" text-anchor="end">Section 1.0</text>
 
   <text x="90" y="700" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="14">2. Stakeholder RACI Matrix &amp; User Personas</text>

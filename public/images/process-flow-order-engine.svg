@@ -8,9 +8,9 @@
       <stop offset="0%" stop-color="#1e293b"/>
       <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
-    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff5e14"/>
-      <stop offset="100%" stop-color="#f97316"/>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
@@ -24,7 +24,7 @@
   <text x="50" y="70" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="24" font-weight="700">Order Fulfillment &amp; Inventory Synchronization Engine</text>
   <text x="50" y="98" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">End-to-End BPMN 2.0 Process Flow • Technical Business Analyst Architecture Map</text>
   
-  <rect x="1000" y="48" width="150" height="32" rx="16" fill="url(#orangeGrad)"/>
+  <rect x="1000" y="48" width="150" height="32" rx="16" fill="url(#indigoGrad)"/>
   <text x="1075" y="69" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">ACTIVE SPEC v2.4</text>
 
   <!-- Swimlanes -->

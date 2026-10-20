@@ -1,9 +1,9 @@
 export const PERSONAL_INFO = {
   name: "Vibhor",
+  role: "Technical Business Analyst",
   targetRole: "Technical Business Analyst",
-  targetCompany: "OrangeMantra",
-  tagline: "Bridging Enterprise Business Needs with Scalable Technical Architecture & AI-Accelerated Engineering",
-  bio: "Technical Business Analyst | 6 Years IT Experience | Requirements to Delivery | SDLC | Requirement Gathering | BRD | Mobile App Development",
+  tagline: "Bridging Enterprise Business Needs with Scalable Technical Architecture & High-Impact Delivery",
+  bio: "Technical Business Analyst | 6+ Years IT Experience | Requirements to Delivery | SDLC | Requirement Gathering | BRD | Mobile App Development",
   email: "vibhorkshp7@example.com",
   linkedin: "https://www.linkedin.com/in/vibhor-kashyap/",
   github: "https://github.com/DevVibhor",

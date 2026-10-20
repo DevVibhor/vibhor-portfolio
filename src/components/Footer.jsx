@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, ArrowUp } from 'lucide-react';
+import { Mail, ArrowUp, Sparkles, Heart } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/artifacts';
 
 const LinkedinIcon = () => (
@@ -9,31 +9,34 @@ const LinkedinIcon = () => (
 );
 
 const GithubIcon = () => (
-  <svg className="w-4 h-4 fill-current text-slate-100" viewBox="0 0 24 24">
+  <svg className="w-4 h-4 fill-current text-slate-700 dark:text-slate-200" viewBox="0 0 24 24">
     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
   </svg>
 );
 
-export default function Footer() {
+export default function Footer({ onOpenAiInfo }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer id="contact" className="border-t border-slate-900 bg-slate-950 text-slate-400 text-xs">
-      {/* Contact & Next Steps Banner */}
+    <footer id="contact" className="border-t border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-950 text-slate-500 dark:text-slate-400 text-xs transition-colors">
+      {/* Contact Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-orange-950/20 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-8 rounded-2xl bg-gradient-to-r from-slate-100 via-white to-indigo-50/60 dark:from-slate-900 dark:via-slate-900/90 dark:to-indigo-950/30 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-2 text-center md:text-left">
-            <p className="text-sm text-slate-300 max-w-xl">
-              I am excited about contributing as a <span className="text-orange-400 font-semibold">{PERSONAL_INFO.targetRole}</span> at {PERSONAL_INFO.targetCompany}, driving business requirements and technical execution forward.
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              Ready to collaborate or discuss opportunities?
+            </h3>
+            <p className="text-sm text-slate-600 dark:text-slate-300 max-w-xl">
+              I am passionate about driving measurable impact as a <span className="text-indigo-600 dark:text-indigo-400 font-semibold">{PERSONAL_INFO.role}</span>, bridging business requirements with scalable technical execution and end-to-end SDLC delivery.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-orange-500 hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/20 transition-all hover:scale-105"
             >
               <Mail className="w-4 h-4" />
               <span>Email Vibhor</span>
@@ -43,7 +46,7 @@ export default function Footer() {
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm transition-colors"
             >
               <LinkedinIcon />
               <span>LinkedIn</span>
@@ -53,7 +56,7 @@ export default function Footer() {
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm transition-colors"
             >
               <GithubIcon />
               <span>GitHub</span>
@@ -62,16 +65,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-6 border-t border-slate-200 dark:border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+            <span>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</span>
+          </div>
 
-          <div className="flex items-center gap-4 text-slate-400">
+          <div className="flex items-center gap-4 text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1.5 text-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
               Hosted on GitHub Pages
             </span>
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 transition-colors cursor-pointer shadow-sm"
               title="Back to Top"
             >
               <span>Back to Top</span>

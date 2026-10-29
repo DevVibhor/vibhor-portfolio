@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234F46E5'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vibhor | Technical Business Analyst Portfolio</title>
-    <meta name="description" content="Technical Business Analyst portfolio showcasing real-world BRDs, BPMN Process Flows, Solution Architecture Proposals, and Live Enterprise Platforms." />
+    <title>Vibhor | Technical Business Analyst</title>
+    <meta name="description" content="Work samples from Vibhor, a Technical Business Analyst with 6+ years in IT: live projects, BRDs, solution proposals and process flows." />
     <script>
       (function() {
         try {
           var stored = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (stored === 'light') {
+          var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+          if (stored === 'light' || (!stored && prefersLight)) {
             document.documentElement.classList.remove('dark');
           } else {
             document.documentElement.classList.add('dark');

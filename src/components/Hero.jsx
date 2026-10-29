@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowDown, CheckCircle2, Layers, Cpu, FileText, ExternalLink } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/artifacts';
+import { ArrowDown, ArrowRight, Globe, FileText, Cpu, GitMerge, Mail } from 'lucide-react';
+import { PERSONAL_INFO, CATEGORIES, ARTIFACTS } from '../data/artifacts';
 
 const LinkedinIcon = () => (
   <svg className="w-4 h-4 fill-current text-[#0A66C2]" viewBox="0 0 24 24">
@@ -14,85 +14,143 @@ const GithubIcon = () => (
   </svg>
 );
 
+const CATEGORY_ICONS = {
+  design: { icon: Globe, color: 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10' },
+  brd: { icon: FileText, color: 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10' },
+  solution: { icon: Cpu, color: 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-500/10' },
+  flow: { icon: GitMerge, color: 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-500/10' },
+};
+
+const COMPETENCIES = ['Requirement Gathering', 'BRD & FRD Writing', 'BPMN Process Flows', 'Solution Design', 'Agile / Scrum', 'UAT', 'Web & Mobile Platforms'];
+
 export default function Hero({ onSelectCategory }) {
   const scrollToDeliverables = () => {
     const el = document.getElementById('artifacts-section');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const jumpToCategory = (categoryId) => {
+    onSelectCategory(categoryId);
+    scrollToDeliverables();
+  };
+
   return (
-    <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 overflow-hidden text-center">
+    <section className="relative pt-14 pb-16 md:pt-20 md:pb-20 overflow-hidden">
       {/* Subtle background ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[360px] bg-gradient-to-tr from-indigo-500/10 via-blue-500/10 to-cyan-500/5 blur-3xl pointer-events-none -z-10 rounded-full" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[360px] bg-gradient-to-tr from-indigo-500/10 via-blue-500/10 to-cyan-500/5 blur-3xl pointer-events-none -z-10 rounded-full" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Experience Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/30 mb-6 shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Available for High-Impact Technical BA Roles</span>
-        </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          {/* Availability Pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Open to Technical BA roles</span>
+          </div>
 
-        {/* Name and Role */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-          Hi, I'm{' '}
-          <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 dark:from-indigo-400 dark:via-blue-300 dark:to-cyan-400 bg-clip-text text-transparent">
-            {PERSONAL_INFO.name}
-          </span>
-        </h1>
-        
-        <p className="mt-4 text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-200">
-          {PERSONAL_INFO.role}
-        </p>
-
-        {/* Bio */}
-        <p className="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
-          {PERSONAL_INFO.bio}
-        </p>
-
-        {/* Key Core Competencies Pills */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-          {['Requirements Gathering', 'BRD & FRD Authoring', 'BPMN 2.0 Process Flows', 'Solution Architecture', 'Agile / Scrum SDLC', 'Mobile & Web Platforms'].map((tag, idx) => (
-            <span
-              key={idx}
-              className="text-xs px-3 py-1 rounded-lg font-medium bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-sm"
-            >
-              {tag}
+          {/* Name and Role */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+            Hi, I'm{' '}
+            <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 dark:from-indigo-400 dark:via-blue-300 dark:to-cyan-400 bg-clip-text text-transparent">
+              {PERSONAL_INFO.name}
             </span>
-          ))}
+          </h1>
+
+          <p className="mt-3 text-lg sm:text-xl font-semibold text-slate-700 dark:text-slate-200">
+            {PERSONAL_INFO.role} <span className="text-slate-400 dark:text-slate-500 font-normal">·</span> {PERSONAL_INFO.yearsExperience} years in IT
+          </p>
+
+          {/* Bio */}
+          <p className="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            {PERSONAL_INFO.bio}
+          </p>
+
+          {/* Action Buttons */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <button
+              onClick={scrollToDeliverables}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/20 transition-all hover:scale-105 cursor-pointer"
+            >
+              <span>See my work</span>
+              <ArrowDown className="w-4 h-4" />
+            </button>
+
+            <a
+              href={`mailto:${PERSONAL_INFO.email}`}
+              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:scale-105"
+            >
+              <Mail className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <span>Email me</span>
+            </a>
+
+            <a
+              href={PERSONAL_INFO.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:scale-105"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+            >
+              <LinkedinIcon />
+            </a>
+
+            <a
+              href={PERSONAL_INFO.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:scale-105"
+              aria-label="GitHub profile"
+              title="GitHub"
+            >
+              <GithubIcon />
+            </a>
+          </div>
+
+          {/* Core Competencies */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 max-w-3xl mx-auto">
+            {COMPETENCIES.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs px-3 py-1 rounded-full font-medium bg-white/70 dark:bg-slate-900/70 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <button
-            onClick={scrollToDeliverables}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/20 transition-all hover:scale-105 cursor-pointer"
-          >
-            <FileText className="w-4 h-4" />
-            <span>Explore Deliverables</span>
-            <ArrowDown className="w-3.5 h-3.5" />
-          </button>
-
-          <a
-            href={PERSONAL_INFO.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:scale-105"
-          >
-            <LinkedinIcon />
-            <span>LinkedIn</span>
-            <ExternalLink className="w-3 h-3 text-slate-400" />
-          </a>
-
-          <a
-            href={PERSONAL_INFO.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:scale-105"
-          >
-            <GithubIcon />
-            <span>GitHub</span>
-            <ExternalLink className="w-3 h-3 text-slate-400" />
-          </a>
+        {/* What's inside: quick links into each type of deliverable */}
+        <div className="mt-14">
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
+            What you'll find here
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {CATEGORIES.filter((cat) => cat.id !== 'all').map((cat) => {
+              const meta = CATEGORY_ICONS[cat.id];
+              const Icon = meta.icon;
+              const count = ARTIFACTS.filter((a) => a.category === cat.id).length;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => jumpToCategory(cat.id)}
+                  className="group text-left p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 dark:hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/10 transition-all cursor-pointer"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className={`inline-flex p-2 rounded-xl ${meta.color}`}>
+                      <Icon className="w-4 h-4" />
+                    </span>
+                    <span className="text-2xl font-extrabold text-slate-900 dark:text-white tabular-nums">{count}</span>
+                  </div>
+                  <div className="mt-3 flex items-center gap-1 text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    {cat.name}
+                    <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </div>
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed hidden sm:block">
+                    {cat.description}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

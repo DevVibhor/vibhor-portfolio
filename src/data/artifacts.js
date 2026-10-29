@@ -3,18 +3,19 @@ export const PERSONAL_INFO = {
   role: "Technical Business Analyst",
   targetRole: "Technical Business Analyst",
   tagline: "Bridging Enterprise Business Needs with Scalable Technical Architecture & High-Impact Delivery",
-  bio: "Technical Business Analyst | 6+ Years IT Experience | Requirements to Delivery | SDLC | Requirement Gathering | BRD | Mobile App Development",
-  email: "vibhorkshp7@example.com",
+  bio: "I take projects from the first stakeholder conversation to go-live: gathering requirements, writing BRDs, mapping process flows and working alongside development teams to ship web and mobile platforms that are running in production today.",
+  yearsExperience: "6+",
+  email: "vibhorkshp7@gmail.com",
   linkedin: "https://www.linkedin.com/in/vibhor-kashyap/",
   github: "https://github.com/DevVibhor",
 };
 
 export const CATEGORIES = [
-  { id: 'all', name: 'All Deliverables' },
-  { id: 'flow', name: 'Process Flows' },
-  { id: 'design', name: 'Live Project URL' },
-  { id: 'brd', name: 'BRDs' },
-  { id: 'solution', name: 'Solution Proposals' }
+  { id: 'all', name: 'All Work' },
+  { id: 'design', name: 'Live Projects', description: 'Platforms I worked on that are running in production' },
+  { id: 'brd', name: 'BRDs', description: 'Business requirement documents, sanitized for sharing' },
+  { id: 'solution', name: 'Solution Proposals', description: 'Proposed solutions with scope and approach' },
+  { id: 'flow', name: 'Process Flows', description: 'End-to-end workflows mapped for systems that went live' }
 ];
 
 export const ARTIFACTS = [
@@ -56,106 +57,7 @@ export const ARTIFACTS = [
     ]
   },
 
-  // 2. Process Flow 1: PCR raised by Supplier
-  {
-    id: 'flow-pcr-supplier',
-    title: 'PCR raised by Supplier',
-    category: 'flow',
-    version: 'Approved Spec',
-    date: 'Suzuki SQA System',
-    status: 'Approved',
-    fileType: 'image',
-    fileUrl: 'processflows/pcr-raised-by-supplier.png',
-    previewImage: 'processflows/pcr-raised-by-supplier.png',
-    summary: 'Comprehensive Process Change Request (PCR) lifecycle flow detailing supplier initiation, internal quality review, trial lot evaluation, and executive approval gate for automotive components.',
-    impact: 'Standardized supplier change request approvals, eliminating undocumented component changes and ensuring 100% audit compliance.',
-    tools: ['BPMN 2.0', 'Process Flowcharting', 'Supplier Quality Assurance', 'Miro'],
-    stakeholders: ['Tier-1 Suppliers', 'SQA Engineers', 'Plant Quality Managers'],
-    highlights: [
-      'Step-by-step supplier PCR initiation and validation criteria',
-      'Decision gateways for initial review, trial evaluation, and final signoff',
-      'Multi-stage notification & feedback loops between supplier and OEM',
-      'Formal verification checkpoints before production authorization'
-    ],
-    sections: [
-      {
-        heading: 'Process Overview: PCR Raised by Supplier',
-        content: 'Detailed workflow modeling the end-to-end lifecycle when a component supplier submits a Process Change Request (PCR) for manufacturing line modifications, material alterations, or tool relocations in the Suzuki SQA ecosystem.'
-      },
-      {
-        heading: 'Approval Checkpoints & Gateways',
-        content: '1. PCR Submission: Supplier registers request with technical justification and test reports.\n2. Initial Screening: SQA engineer reviews risk severity and feasibility.\n3. Trial Production: Sample evaluation and CMM dimensional checks.\n4. Final Approval: Executive signoff and production cutover authorization.'
-      }
-    ]
-  },
-
-  // 3. Process Flow 2: Vehicle Inspection System
-  {
-    id: 'flow-vehicle-inspection',
-    title: 'Vehicle Inspection System',
-    category: 'flow',
-    version: 'Production Flow',
-    date: 'Suzuki SQA System',
-    status: 'Approved',
-    fileType: 'image',
-    fileUrl: 'processflows/vehicle-inspection-system.png',
-    previewImage: 'processflows/vehicle-inspection-system.png',
-    summary: 'System process flow and interaction map for vehicle inspection, capturing quality checkpoint gateways, defect logging, and auditor sign-off sequences.',
-    impact: 'Streamlined real-time vehicle defect detection and reduced assembly line bottlenecks across inspection bays.',
-    tools: ['System Architecture', 'Process Modeling', 'Quality Management System'],
-    stakeholders: ['Inspection Line Auditors', 'Plant Operations', 'Systems Architect'],
-    highlights: [
-      'Sequential inspection gateway verification along the vehicle line',
-      'Real-time defect severity categorization and rework routing',
-      'Digital auditor signoff capturing timestamps and inspector credentials',
-      'Automated quality certificate dispatch upon passing all checkpoints'
-    ],
-    sections: [
-      {
-        heading: 'Vehicle Inspection Architecture & Workflow',
-        content: 'Process and system interaction mapping detailing how vehicles progress through consecutive inspection stations, capturing sensor and manual audit findings into the central SQA database.'
-      },
-      {
-        heading: 'Gateway Verification & Defect Routing',
-        content: '• Bay 1-N Quality Audits: Line inspectors check mechanical, electrical, and cosmetic parameters.\n• Defect Logging: Instant routing to rework bay for items failing tolerance thresholds.\n• Final Buyoff: Verified stamp generated upon passing all gateway parameters.'
-      }
-    ]
-  },
-
-  // 4. Process Flow 3: Die:Mould Duplication Process Flow
-  {
-    id: 'flow-die-mould',
-    title: 'Die/Mould Duplication Process Flow',
-    category: 'flow',
-    version: 'Approved Spec',
-    date: 'Suzuki SQA System',
-    status: 'Approved',
-    fileType: 'image',
-    fileUrl: 'processflows/die-mould-duplication-flow.png',
-    previewImage: 'processflows/die-mould-duplication-flow.png',
-    summary: 'Quality assurance process flow governing die and mould duplication, tooling validation trials, dimensional tolerance inspections, and production clearance.',
-    impact: 'Ensures 100% tooling consistency and prevents defective component production from worn or unverified duplicate dies.',
-    tools: ['BPMN 2.0', 'Tooling QA', 'Process Modeling'],
-    stakeholders: ['Tooling Engineers', 'Supplier Tool Rooms', 'SQA Managers'],
-    highlights: [
-      'Die/mould duplication request and feasibility review',
-      'Trial run part sampling and CMM dimensional inspection',
-      'Approval matrix for pilot batch production and full release',
-      'Comprehensive audit trail for automotive supplier tool rooms'
-    ],
-    sections: [
-      {
-        heading: 'Die / Mould Duplication Lifecycle',
-        content: 'Formalized process flow detailing the stages required when suppliers duplicate dies or moulds to scale capacity or replace worn tooling, ensuring zero deviation in component geometry.'
-      },
-      {
-        heading: 'Tooling Validation Stages',
-        content: '1. Duplication Notification: Supplier notifies OEM with CAD data.\n2. Trial Sampling: First-off-tool parts measured against master engineering drawings.\n3. Capability Study: CPK analysis ensuring process stability.\n4. Final Clearance: Production die signoff and serial release.'
-      }
-    ]
-  },
-
-  // 7. Live Mobile App Deliverable
+  // 2. Live Mobile App Deliverable
   {
     id: 'gfl-cxo-app',
     title: 'GFL CXO Mobile App',
@@ -193,7 +95,7 @@ export const ARTIFACTS = [
     ]
   },
 
-  // 8. BRD: Online Ringi System
+  // 3. BRD: Online Ringi System
   {
     id: 'brd-online-ringi',
     title: 'Online Ringi System BRD',
@@ -220,7 +122,7 @@ export const ARTIFACTS = [
     ]
   },
 
-  // 9. Solution Proposal: PI DMS
+  // 4. Solution Proposal: PI DMS
   {
     id: 'solution-pi-dms',
     title: 'PI DMS Solution Proposal',
@@ -243,6 +145,108 @@ export const ARTIFACTS = [
       {
         heading: '1. Solution Overview',
         content: 'Detailed technical and functional proposal for implementing a centralized Document Management System (DMS) to handle secure document storage, advanced versioning, access control, and regulatory compliance.'
+      }
+    ]
+  },
+
+  // 5. Process Flow 1: PCR raised by Supplier
+  {
+    id: 'flow-pcr-supplier',
+    title: 'PCR raised by Supplier',
+    category: 'flow',
+    project: 'Suzuki SQA Management',
+    version: 'Approved Spec',
+    date: 'Suzuki SQA System',
+    status: 'Approved',
+    fileType: 'image',
+    fileUrl: 'processflows/pcr-raised-by-supplier.png',
+    previewImage: 'processflows/pcr-raised-by-supplier.png',
+    summary: 'Comprehensive Process Change Request (PCR) lifecycle flow detailing supplier initiation, internal quality review, trial lot evaluation, and executive approval gate for automotive components.',
+    impact: 'Standardized supplier change request approvals, eliminating undocumented component changes and ensuring 100% audit compliance.',
+    tools: ['BPMN 2.0', 'Process Flowcharting', 'Supplier Quality Assurance', 'Miro'],
+    stakeholders: ['Tier-1 Suppliers', 'SQA Engineers', 'Plant Quality Managers'],
+    highlights: [
+      'Step-by-step supplier PCR initiation and validation criteria',
+      'Decision gateways for initial review, trial evaluation, and final signoff',
+      'Multi-stage notification & feedback loops between supplier and OEM',
+      'Formal verification checkpoints before production authorization'
+    ],
+    sections: [
+      {
+        heading: 'Process Overview: PCR Raised by Supplier',
+        content: 'Detailed workflow modeling the end-to-end lifecycle when a component supplier submits a Process Change Request (PCR) for manufacturing line modifications, material alterations, or tool relocations in the Suzuki SQA ecosystem.'
+      },
+      {
+        heading: 'Approval Checkpoints & Gateways',
+        content: '1. PCR Submission: Supplier registers request with technical justification and test reports.\n2. Initial Screening: SQA engineer reviews risk severity and feasibility.\n3. Trial Production: Sample evaluation and CMM dimensional checks.\n4. Final Approval: Executive signoff and production cutover authorization.'
+      }
+    ]
+  },
+
+  // 6. Process Flow 2: Vehicle Inspection System
+  {
+    id: 'flow-vehicle-inspection',
+    title: 'Vehicle Inspection System',
+    category: 'flow',
+    project: 'Suzuki SQA Management',
+    version: 'Production Flow',
+    date: 'Suzuki SQA System',
+    status: 'Approved',
+    fileType: 'image',
+    fileUrl: 'processflows/vehicle-inspection-system.png',
+    previewImage: 'processflows/vehicle-inspection-system.png',
+    summary: 'System process flow and interaction map for vehicle inspection, capturing quality checkpoint gateways, defect logging, and auditor sign-off sequences.',
+    impact: 'Streamlined real-time vehicle defect detection and reduced assembly line bottlenecks across inspection bays.',
+    tools: ['System Architecture', 'Process Modeling', 'Quality Management System'],
+    stakeholders: ['Inspection Line Auditors', 'Plant Operations', 'Systems Architect'],
+    highlights: [
+      'Sequential inspection gateway verification along the vehicle line',
+      'Real-time defect severity categorization and rework routing',
+      'Digital auditor signoff capturing timestamps and inspector credentials',
+      'Automated quality certificate dispatch upon passing all checkpoints'
+    ],
+    sections: [
+      {
+        heading: 'Vehicle Inspection Architecture & Workflow',
+        content: 'Process and system interaction mapping detailing how vehicles progress through consecutive inspection stations, capturing sensor and manual audit findings into the central SQA database.'
+      },
+      {
+        heading: 'Gateway Verification & Defect Routing',
+        content: '• Bay 1-N Quality Audits: Line inspectors check mechanical, electrical, and cosmetic parameters.\n• Defect Logging: Instant routing to rework bay for items failing tolerance thresholds.\n• Final Buyoff: Verified stamp generated upon passing all gateway parameters.'
+      }
+    ]
+  },
+
+  // 7. Process Flow 3: Die:Mould Duplication Process Flow
+  {
+    id: 'flow-die-mould',
+    title: 'Die/Mould Duplication Process Flow',
+    category: 'flow',
+    project: 'Suzuki SQA Management',
+    version: 'Approved Spec',
+    date: 'Suzuki SQA System',
+    status: 'Approved',
+    fileType: 'image',
+    fileUrl: 'processflows/die-mould-duplication-flow.png',
+    previewImage: 'processflows/die-mould-duplication-flow.png',
+    summary: 'Quality assurance process flow governing die and mould duplication, tooling validation trials, dimensional tolerance inspections, and production clearance.',
+    impact: 'Ensures 100% tooling consistency and prevents defective component production from worn or unverified duplicate dies.',
+    tools: ['BPMN 2.0', 'Tooling QA', 'Process Modeling'],
+    stakeholders: ['Tooling Engineers', 'Supplier Tool Rooms', 'SQA Managers'],
+    highlights: [
+      'Die/mould duplication request and feasibility review',
+      'Trial run part sampling and CMM dimensional inspection',
+      'Approval matrix for pilot batch production and full release',
+      'Comprehensive audit trail for automotive supplier tool rooms'
+    ],
+    sections: [
+      {
+        heading: 'Die / Mould Duplication Lifecycle',
+        content: 'Formalized process flow detailing the stages required when suppliers duplicate dies or moulds to scale capacity or replace worn tooling, ensuring zero deviation in component geometry.'
+      },
+      {
+        heading: 'Tooling Validation Stages',
+        content: '1. Duplication Notification: Supplier notifies OEM with CAD data.\n2. Trial Sampling: First-off-tool parts measured against master engineering drawings.\n3. Capability Study: CPK analysis ensuring process stability.\n4. Final Clearance: Production die signoff and serial release.'
       }
     ]
   }

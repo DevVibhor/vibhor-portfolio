@@ -26,10 +26,10 @@ export default function Footer({ onOpenAiInfo }) {
         <div className="p-8 rounded-2xl bg-gradient-to-r from-slate-100 via-white to-indigo-50/60 dark:from-slate-900 dark:via-slate-900/90 dark:to-indigo-950/30 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-              Ready to collaborate or discuss opportunities?
+              Like what you see? Let's talk.
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300 max-w-xl">
-              I am passionate about driving measurable impact as a <span className="text-indigo-600 dark:text-indigo-400 font-semibold">{PERSONAL_INFO.role}</span>, bridging business requirements with scalable technical execution and end-to-end SDLC delivery.
+              I'm looking for {PERSONAL_INFO.role} roles where I can own requirements end to end, from stakeholder workshops to UAT sign-off. Happy to walk you through any of these samples in more detail.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export default function Footer({ onOpenAiInfo }) {
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/20 transition-all hover:scale-105"
             >
               <Mail className="w-4 h-4" />
-              <span>Email Vibhor</span>
+              <span>{PERSONAL_INFO.email}</span>
             </a>
 
             <a
@@ -71,10 +71,13 @@ export default function Footer({ onOpenAiInfo }) {
           </div>
 
           <div className="flex items-center gap-4 text-slate-500 dark:text-slate-400">
-            <span className="flex items-center gap-1.5 text-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              Hosted on GitHub Pages
-            </span>
+            <button
+              onClick={onOpenAiInfo}
+              className="flex items-center gap-1.5 text-xs hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              How this site was built
+            </button>
             <button
               onClick={scrollToTop}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 transition-colors cursor-pointer shadow-sm"

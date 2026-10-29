@@ -29,13 +29,13 @@ export default function ArtifactsSection({ selectedCategory, onSelectCategory, o
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-1">
               <Layers className="w-4 h-4" />
-              <span>Portfolio Repository</span>
+              <span>Portfolio</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-              Work &amp; Technical Deliverables
+              Work samples
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-              Real-world client deployments, BPMN 2.0 system workflows, specifications, and architecture proposals.
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1.5 max-w-2xl">
+              Real client work: projects that are live today, and the BRDs, solution proposals and process flows behind them. Documents are sanitized to remove client-confidential details.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export default function ArtifactsSection({ selectedCategory, onSelectCategory, o
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search specs, tools, workflows..."
+              placeholder="Search by title, tool or topic"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-9 pr-14 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 dark:focus:border-indigo-400 shadow-sm transition-all"
@@ -61,7 +61,7 @@ export default function ArtifactsSection({ selectedCategory, onSelectCategory, o
         </div>
 
         {/* Filter Navigation Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none border-b border-slate-200 dark:border-slate-800/80">
+        <div className="flex flex-wrap items-center gap-2 pb-4 mb-6 border-b border-slate-200 dark:border-slate-800/80">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat.id;
             const count = cat.id === 'all' 
@@ -92,11 +92,11 @@ export default function ArtifactsSection({ selectedCategory, onSelectCategory, o
         {/* Results Counter */}
         <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-6">
           <span>
-            Showing <strong className="text-slate-900 dark:text-white font-semibold">{filteredArtifacts.length}</strong> {filteredArtifacts.length === 1 ? 'deliverable' : 'deliverables'}
+            Showing <strong className="text-slate-900 dark:text-white font-semibold">{filteredArtifacts.length}</strong> {filteredArtifacts.length === 1 ? 'item' : 'items'}
             {searchQuery && ` matching "${searchQuery}"`}
           </span>
-          <span className="text-indigo-600 dark:text-indigo-400 font-medium hidden sm:inline">
-            Click any deliverable card to inspect embedded documents or flows
+          <span className="hidden sm:inline">
+            Documents and flows open in a viewer. Live projects open in a new tab.
           </span>
         </div>
 
@@ -113,13 +113,13 @@ export default function ArtifactsSection({ selectedCategory, onSelectCategory, o
           </div>
         ) : (
           <div className="p-12 text-center rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 shadow-sm">
-            <p className="text-slate-600 dark:text-slate-400 text-sm">No deliverables match your search query or filter.</p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">Nothing matches that search or filter.</p>
             <button
               onClick={() => { onSelectCategory('all'); setSearchQuery(''); }}
               className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-colors cursor-pointer shadow-sm"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Reset Filters</span>
+              <span>Show everything</span>
             </button>
           </div>
         )}

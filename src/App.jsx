@@ -62,7 +62,6 @@ export default function App() {
       <Navbar
         theme={theme}
         onToggleTheme={handleToggleTheme}
-        onOpenAiInfo={() => setAiInfoOpen(true)}
       />
 
       <main className="flex-1">

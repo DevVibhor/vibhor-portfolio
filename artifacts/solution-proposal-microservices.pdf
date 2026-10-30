@@ -15,11 +15,11 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 1829 >>
+<< /Length 1830 >>
 stream
 BT /F1 22 Tf 50 740 Td (Solution Proposal: Microservices Migration) Tj ET
 BT /F2 13 Tf 50 715 Td (Technical Architecture & Modernization Blueprint) Tj ET
-BT /F2 10 Tf 50 685 Td (Author: Vibhor | Prepared for: OrangeMantra) Tj ET
+BT /F2 10 Tf 50 685 Td (Author: Vibhor | Technical BA Portfolio Spec) Tj ET
 BT /F2 10 Tf 50 670 Td (Status: Approved for Technical Evaluation | Version: 2.4) Tj ET
 0.2 0.4 0.8 RG 2 w 50 655 m 550 655 l S
 BT /F1 14 Tf 50 620 Td (1.0 Problem Statement & Architecture Bottlenecks) Tj ET
@@ -61,10 +61,10 @@ xref
 0000000196 00000 n 
 0000000266 00000 n 
 0000000402 00000 n 
-0000002283 00000 n 
-0000002419 00000 n 
+0000002284 00000 n 
+0000002420 00000 n 
 trailer
 << /Size 9 /Root 1 0 R >>
 startxref
-3141
+3142
 %%EOF

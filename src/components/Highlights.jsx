@@ -5,7 +5,7 @@ import Logo from './Logo';
 // Key numbers from the CV, then the clients they were delivered for
 export default function Highlights() {
   return (
-    <section className="border-t border-rule bg-surface">
+    <section className="snap-section border-t border-rule bg-surface">
       <div className="max-w-5xl mx-auto px-5 sm:px-8">
         <dl className="grid grid-cols-2">
           {KEY_NUMBERS.map(({ value, label }) => (

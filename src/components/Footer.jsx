@@ -3,7 +3,7 @@ import { PERSONAL_INFO } from '../data/artifacts';
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-rule scroll-mt-14">
+    <footer id="contact" className="snap-section border-t border-rule scroll-mt-14">
       <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr] md:gap-16">
           <div>

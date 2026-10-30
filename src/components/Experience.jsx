@@ -4,7 +4,7 @@ import Logo from './Logo';
 
 export default function Experience() {
   return (
-    <section id="experience" className="border-t border-rule scroll-mt-14">
+    <section id="experience" className="snap-section border-t border-rule scroll-mt-14">
       <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-20">
         <div className="flex items-baseline justify-between gap-6">
           <h2 className="font-serif text-3xl sm:text-4xl tracking-tight">Experience</h2>

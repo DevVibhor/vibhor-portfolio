@@ -50,6 +50,21 @@
   filter: sepia(0.18) saturate(0.95) brightness(0.92);
 }
 
+/* Scroll one section at a time on desktop-sized screens. Phones keep normal scrolling,
+   since their sections are several screens tall. Padding keeps sections clear of the
+   sticky header (h-14 plus its 1px border). */
+@media (min-width: 1024px) and (min-height: 700px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 57px;
+  }
+  .snap-section {
+    scroll-snap-align: start;
+    /* scroll-padding above already clears the header; the sections' own nav-link offset would double it */
+    scroll-margin-top: 0;
+  }
+}
+
 /* Horizontal scrollers that still scroll, without a visible scrollbar */
 .no-scrollbar {
   scrollbar-width: none;

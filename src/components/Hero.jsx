@@ -11,7 +11,7 @@ const FACTS = [
 
 export default function Hero() {
   return (
-    <section className="max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20 md:pt-24 md:pb-24">
+    <section className="snap-section max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20 md:pt-14 md:pb-16">
       <p className="label">{PERSONAL_INFO.name} · {PERSONAL_INFO.role}</p>
 
       <div className="mt-6 grid gap-12 md:grid-cols-[1.5fr_1fr] md:gap-16">

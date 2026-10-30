@@ -1,128 +1,126 @@
-import React, { useState, useMemo } from 'react';
-import { Search, Filter, FileText, Layers, RotateCcw } from 'lucide-react';
-import { ARTIFACTS, CATEGORIES } from '../data/artifacts';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { ARTIFACTS, WORK_ORDER } from '../data/artifacts';
 import ArtifactCard from './ArtifactCard';
 
-export default function ArtifactsSection({ selectedCategory, onSelectCategory, onOpenArtifact }) {
-  const [searchQuery, setSearchQuery] = useState('');
+const AUTOPLAY_MS = 3000;
+// After someone swipes, scrolls or clicks the arrows, wait this long before moving on again
+const USER_PAUSE_MS = 8000;
 
-  const filteredArtifacts = useMemo(() => {
-    return ARTIFACTS.filter((item) => {
-      const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
-      const q = searchQuery.toLowerCase().trim();
-      const matchesSearch = !q || (
-        item.title.toLowerCase().includes(q) ||
-        item.summary.toLowerCase().includes(q) ||
-        (item.categoryName || item.category || '').toLowerCase().includes(q) ||
-        (item.tools && item.tools.some(t => t.toLowerCase().includes(q))) ||
-        (item.highlights && item.highlights.some(h => h.toLowerCase().includes(q)))
-      );
-      return matchesCategory && matchesSearch;
-    });
-  }, [selectedCategory, searchQuery]);
+const ITEMS = WORK_ORDER.flatMap((cat) => ARTIFACTS.filter((a) => a.category === cat));
+
+const prefersReducedMotion = () => {
+  try {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch (e) {
+    return false;
+  }
+};
+
+export default function ArtifactsSection({ onOpenArtifact, paused: pausedByParent = false }) {
+  const trackRef = useRef(null);
+  const hovering = useRef(false);
+  const focused = useRef(false);
+  const pauseUntil = useRef(0);
+  const [playing, setPlaying] = useState(() => !prefersReducedMotion());
+  const [progress, setProgress] = useState(0);
+
+  // Move by one card; wrap around at either end
+  const step = useCallback((direction) => {
+    const track = trackRef.current;
+    if (!track || !track.firstElementChild) return;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const cardWidth = track.firstElementChild.getBoundingClientRect().width + gap;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    let next = track.scrollLeft + direction * cardWidth;
+    if (direction > 0 && track.scrollLeft >= maxScroll - 4) next = 0;
+    if (direction < 0 && track.scrollLeft <= 4) next = maxScroll;
+    track.scrollTo({ left: next, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    if (!playing || pausedByParent) return undefined;
+    const id = setInterval(() => {
+      if (document.hidden || hovering.current || focused.current || Date.now() < pauseUntil.current) return;
+      step(1);
+    }, AUTOPLAY_MS);
+    return () => clearInterval(id);
+  }, [playing, pausedByParent, step]);
+
+  const holdForUser = () => {
+    pauseUntil.current = Date.now() + USER_PAUSE_MS;
+  };
+
+  const handleArrow = (direction) => {
+    holdForUser();
+    step(direction);
+  };
+
+  const handleScroll = () => {
+    const track = trackRef.current;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    setProgress(maxScroll > 0 ? track.scrollLeft / maxScroll : 0);
+  };
+
+  const controlClass = 'label hover:text-accent transition-colors cursor-pointer';
 
   return (
-    <section id="artifacts-section" className="py-16 border-t border-slate-200 dark:border-slate-800/80 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+    <section id="work" className="border-t border-rule scroll-mt-14">
+      <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-20">
+        <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-1">
-              <Layers className="w-4 h-4" />
-              <span>Portfolio</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-              Work samples
-            </h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1.5 max-w-2xl">
-              Real client work: projects that are live today, and the BRDs, solution proposals and process flows behind them. Documents are sanitized to remove client-confidential details.
+            <h2 className="font-serif text-3xl sm:text-4xl tracking-tight">Selected work</h2>
+            <p className="mt-3 text-muted max-w-xl">
+              Real client work, and the documents behind it. Documents and flows open here; live projects open in a new tab.
             </p>
           </div>
 
-          {/* Search Box */}
-          <div className="relative w-full md:w-80">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              placeholder="Search by title, tool or topic"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-9 pr-14 py-2.5 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 dark:focus:border-indigo-400 shadow-sm transition-all"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-white font-medium px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800"
-              >
-                Clear
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Filter Navigation Tabs */}
-        <div className="flex flex-wrap items-center gap-2 pb-4 mb-6 border-b border-slate-200 dark:border-slate-800/80">
-          {CATEGORIES.map((cat) => {
-            const isSelected = selectedCategory === cat.id;
-            const count = cat.id === 'all' 
-              ? ARTIFACTS.length 
-              : ARTIFACTS.filter(a => a.category === cat.id).length;
-
-            return (
-              <button
-                key={cat.id}
-                onClick={() => onSelectCategory(cat.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-                  isSelected
-                    ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-md shadow-indigo-600/20'
-                    : 'bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-sm'
-                }`}
-              >
-                <span>{cat.name}</span>
-                <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-semibold ${
-                  isSelected ? 'bg-black/20 text-white' : 'bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-400'
-                }`}>
-                  {count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Results Counter */}
-        <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-6">
-          <span>
-            Showing <strong className="text-slate-900 dark:text-white font-semibold">{filteredArtifacts.length}</strong> {filteredArtifacts.length === 1 ? 'item' : 'items'}
-            {searchQuery && ` matching "${searchQuery}"`}
-          </span>
-          <span className="hidden sm:inline">
-            Documents and flows open in a viewer. Live projects open in a new tab.
-          </span>
-        </div>
-
-        {/* Artifacts Grid */}
-        {filteredArtifacts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredArtifacts.map((artifact) => (
-              <ArtifactCard
-                key={artifact.id}
-                artifact={artifact}
-                onOpen={onOpenArtifact}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="p-12 text-center rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 shadow-sm">
-            <p className="text-slate-600 dark:text-slate-400 text-sm">Nothing matches that search or filter.</p>
+          <div className="flex items-center gap-5">
             <button
-              onClick={() => { onSelectCategory('all'); setSearchQuery(''); }}
-              className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-colors cursor-pointer shadow-sm"
+              onClick={() => setPlaying((p) => !p)}
+              className={controlClass}
+              aria-pressed={!playing}
             >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span>Show everything</span>
+              {playing ? 'Pause' : 'Play'}
+            </button>
+            <button onClick={() => handleArrow(-1)} className={`${controlClass} text-base`} aria-label="Previous">
+              ←
+            </button>
+            <button onClick={() => handleArrow(1)} className={`${controlClass} text-base`} aria-label="Next">
+              →
             </button>
           </div>
-        )}
+        </div>
+
+        <ol
+          ref={trackRef}
+          onScroll={handleScroll}
+          onMouseEnter={() => { hovering.current = true; }}
+          onMouseLeave={() => { hovering.current = false; }}
+          onFocus={() => { focused.current = true; }}
+          onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) focused.current = false; }}
+          onPointerDown={holdForUser}
+          onWheel={holdForUser}
+          onTouchStart={holdForUser}
+          className="no-scrollbar mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth"
+          aria-label="Selected work"
+        >
+          {ITEMS.map((artifact, idx) => (
+            <li
+              key={artifact.id}
+              className="snap-start shrink-0 basis-[85%] sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)]"
+            >
+              <ArtifactCard number={idx + 1} artifact={artifact} onOpen={onOpenArtifact} />
+            </li>
+          ))}
+        </ol>
+
+        {/* Scroll position */}
+        <div className="mt-6 h-px bg-rule" aria-hidden="true">
+          <div
+            className="h-px bg-ink transition-[width] duration-300"
+            style={{ width: `${Math.max(8, progress * 100)}%` }}
+          />
+        </div>
       </div>
     </section>
   );

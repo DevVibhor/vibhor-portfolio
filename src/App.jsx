@@ -2,27 +2,26 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ArtifactsSection from './components/ArtifactsSection';
+import Highlights from './components/Highlights';
+import Experience from './components/Experience';
 import Footer from './components/Footer';
 import ArtifactModal from './components/ArtifactModal';
-import AiContextModal from './components/AiContextModal';
 
 export default function App() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeArtifact, setActiveArtifact] = useState(null);
-  const [aiInfoOpen, setAiInfoOpen] = useState(false);
 
-  // Initialize theme from localStorage or system preference (defaults to dark)
+  // Initialize theme from localStorage or system preference (defaults to light)
   const [theme, setTheme] = useState(() => {
     try {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) return savedTheme;
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        return 'light';
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
       }
     } catch (e) {
       // Fallback
     }
-    return 'dark';
+    return 'light';
   });
 
   // Keep DOM class and localStorage in sync with theme state
@@ -44,58 +43,34 @@ export default function App() {
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
 
-  const handleSelectCategory = (categoryId) => {
-    setSelectedCategory(categoryId);
-  };
-
-  const handleOpenArtifact = (artifact) => {
-    setActiveArtifact(artifact);
-  };
-
-  const handleCloseArtifact = () => {
-    setActiveArtifact(null);
-  };
-
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0B0F19] dark:text-slate-100 flex flex-col selection:bg-indigo-500 selection:text-white transition-colors duration-200">
-      {/* Top Sticky Navigation with Theme Toggle */}
-      <Navbar
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
-      />
+    <div className="min-h-screen bg-paper text-ink flex flex-col">
+      <Navbar theme={theme} onToggleTheme={handleToggleTheme} />
 
       <main className="flex-1">
-        {/* Homepage Hero: Bio, Credentials & Competencies */}
-        <Hero
-          onSelectCategory={handleSelectCategory}
-        />
+        {/* Intro and fact sheet */}
+        <Hero />
 
-        {/* Deliverables Repository: Live Platforms, BRDs, BPMN Flows, Solution Proposals */}
-        <ArtifactsSection
-          selectedCategory={selectedCategory}
-          onSelectCategory={handleSelectCategory}
-          onOpenArtifact={handleOpenArtifact}
-        />
+        {/* Key numbers and client logos */}
+        <Highlights />
+
+        {/* Work carousel: live projects, documents, process flows */}
+        <ArtifactsSection onOpenArtifact={setActiveArtifact} paused={Boolean(activeArtifact)} />
+
+        {/* Work history */}
+        <Experience />
       </main>
 
-      {/* Footer & Contact */}
-      <Footer
-        onOpenAiInfo={() => setAiInfoOpen(true)}
-      />
+      <Footer />
 
-      {/* Interactive Artifact Viewer Modal (PDF / Diagram / Spec) */}
+      {/* Document / flow viewer */}
       {activeArtifact && (
         <ArtifactModal
+          key={activeArtifact.id}
           artifact={activeArtifact}
-          onClose={handleCloseArtifact}
+          onClose={() => setActiveArtifact(null)}
         />
       )}
-
-      {/* Architecture & Engineering Agility Modal */}
-      <AiContextModal
-        isOpen={aiInfoOpen}
-        onClose={() => setAiInfoOpen(false)}
-      />
     </div>
   );
 }

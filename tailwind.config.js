@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 export default {
   darkMode: 'class',
   content: [
@@ -7,30 +9,21 @@ export default {
   ],
   theme: {
     extend: {
+      // Colors come from CSS variables in index.css so light/dark share one set of class names
       colors: {
-        brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-          950: '#1e1b4b',
-        },
-        accent: {
-          blue: '#2563eb',
-          cyan: '#06b6d4',
-          sky: '#0284c7',
-          emerald: '#10b981',
-        }
+        paper: token('paper'),
+        surface: token('surface'),
+        ink: token('ink'),
+        muted: token('muted'),
+        rule: token('rule'),
+        accent: token('accent'),
+        'accent-strong': token('accent-strong'),
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
-      }
+        serif: ['Newsreader', 'Georgia', 'serif'],
+        sans: ['"IBM Plex Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+      },
     },
   },
   plugins: [],

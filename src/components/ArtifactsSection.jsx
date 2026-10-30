@@ -65,7 +65,7 @@ export default function ArtifactsSection({ onOpenArtifact, paused: pausedByParen
 
   return (
     <section id="work" className="snap-section border-t border-rule scroll-mt-14">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-12">
+      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-12">
         <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
           <div>
             <h2 className="font-serif text-3xl sm:text-4xl tracking-tight">Selected work</h2>

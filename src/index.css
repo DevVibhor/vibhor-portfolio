@@ -62,6 +62,11 @@
     scroll-snap-align: start;
     /* scroll-padding above already clears the header; the sections' own nav-link offset would double it */
     scroll-margin-top: 0;
+    /* Each section is one full screen below the header, content centred, so none spills into the next */
+    min-height: calc(100vh - 57px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 

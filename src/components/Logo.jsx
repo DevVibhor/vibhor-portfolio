@@ -6,8 +6,11 @@ export default function Logo({ name, src, className = '' }) {
   const [failed, setFailed] = useState(false);
 
   if (!src || failed) {
-    return <span className={`font-serif text-lg leading-tight text-muted ${className}`}>{name}</span>;
+    return <span className="font-serif text-lg leading-tight text-muted">{name}</span>;
   }
+
+  // Default height unless the caller sets its own; two height classes would fight over CSS order
+  const height = /(^|\s)h-/.test(className) ? '' : 'h-8';
 
   return (
     <img
@@ -16,7 +19,7 @@ export default function Logo({ name, src, className = '' }) {
       title={name}
       loading="lazy"
       onError={() => setFailed(true)}
-      className={`h-8 w-auto max-w-[9rem] object-contain dark:box-content dark:rounded dark:bg-[rgb(243_239_230)] dark:px-2 dark:py-1.5 ${className}`}
+      className={`${height} w-auto max-w-[9rem] object-contain dark:box-content dark:rounded dark:bg-[rgb(243_239_230)] dark:px-2 dark:py-1.5 ${className}`}
     />
   );
 }

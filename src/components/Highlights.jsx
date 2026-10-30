@@ -22,7 +22,7 @@ export default function Highlights() {
           ))}
         </dl>
 
-        <div className="py-8 border-t border-rule flex flex-col md:flex-row md:items-center gap-5 md:gap-10">
+        <div className="py-8 border-t border-rule flex flex-col gap-5">
           <p className="label shrink-0">Clients I've delivered for</p>
           <ul className="flex flex-wrap items-center gap-x-8 gap-y-3">
             {CLIENTS.map((client) => (

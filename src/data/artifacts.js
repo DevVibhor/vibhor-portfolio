@@ -25,6 +25,9 @@ export const CLIENTS = [
   { name: 'James Walker Inmarco', logo: 'logos/james-walker-inmarco.png' },
   { name: 'V2 Retail', logo: 'logos/v2-retail.png' },
   { name: 'Gujarat Fluorochemicals (GFL)', logo: 'logos/gfl.webp', logoClass: 'h-12' },
+  { name: 'Ayurvet', logo: 'logos/ayurvet.png', logoClass: 'h-12' },
+  // Shows the typeset name until public/logos/matix.png is added
+  { name: 'Matix Fertilisers', logo: 'logos/matix.png' },
 ];
 
 // Work history, most recent first (from the CV)
@@ -32,6 +35,7 @@ export const EXPERIENCE = [
   {
     company: 'Team Computers Pvt. Ltd.',
     logo: 'logos/team-computers.png',
+    logoClass: 'h-[37px]',
     location: 'Gurugram',
     role: 'Business Analyst',
     dates: 'May 2023 – Sep 2026',
@@ -40,6 +44,7 @@ export const EXPERIENCE = [
   {
     company: 'Kockpit Analytics Pvt. Ltd.',
     logo: 'logos/kockpit.png',
+    logoClass: 'h-[37px]',
     location: 'New Delhi',
     role: 'Senior Developer',
     dates: 'Jul 2020 – Apr 2023',

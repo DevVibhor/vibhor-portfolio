@@ -24,7 +24,8 @@ export default function Experience() {
               </div>
               <div>
                 <h3 className="font-serif text-2xl tracking-tight">{job.role}</h3>
-                <p className="mt-1 text-sm">{job.company}, {job.location}</p>
+                <p className="mt-1 text-sm">{job.address ? job.company : `${job.company}, ${job.location}`}</p>
+                {job.address && <p className="mt-0.5 text-xs text-muted">{job.address}</p>}
                 <p className="mt-3 leading-relaxed text-muted max-w-2xl">{job.summary}</p>
               </div>
             </li>

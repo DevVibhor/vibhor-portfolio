@@ -24,10 +24,11 @@ export default function Highlights() {
 
         <div className="py-8 border-t border-rule flex flex-col gap-5">
           <p className="label shrink-0">Clients I've delivered for</p>
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-3">
+          {/* Every client logo at the CNH logo's height; in dark mode one light panel sits behind them all */}
+          <ul className="flex flex-wrap items-center gap-x-5 gap-y-4 dark:bg-[rgb(243_239_230)] dark:rounded-md dark:p-4">
             {CLIENTS.map((client) => (
               <li key={client.name}>
-                <Logo name={client.name} src={client.logo} className={client.logoClass} />
+                <Logo name={client.name} src={client.logo} className="h-[43px] max-w-none" plate={false} />
               </li>
             ))}
           </ul>

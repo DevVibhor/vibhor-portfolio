@@ -16,4 +16,4 @@ white background made transparent; to add or change a logo, set `logo:` for that
 | Gujarat Fluorochemicals (GFL) | Client | https://gfl.co.in/assets/images/New_GFL-Logo29.webp | `public/logos/gfl.webp` |
 | James Walker Inmarco | Client | https://perfect-valves.com/wp-content/uploads/2025/03/28.jpg | `public/logos/james-walker-inmarco.png` |
 | Ayurvet | Client | https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi8Aq7hP4w3Pr-I3n1jcml7WBC1SBw4VqHiJw5wRrL-g&s=10 | `public/logos/ayurvet.png` |
-| Matix Fertilisers | Client | https://matixgroup.com/wp-content/uploads/2025/03/Matix.png (the site blocks automated downloads; save it by hand) | `public/logos/matix.png` (not added yet; the name is shown in type until it is) |
+| Matix Fertilisers | Client | https://matixgroup.com/wp-content/uploads/2025/03/Matix.png (saved by hand; the site blocks automated downloads) | `public/logos/matix.png` |

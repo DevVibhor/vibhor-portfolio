@@ -18,15 +18,14 @@ export const KEY_NUMBERS = [
 ];
 
 // Clients I've delivered for. `logo` is a path under public/ (sources in logo-sources.md);
-// until a file is added the name is typeset instead. `logoClass` adjusts size or tone for one logo.
+// until a file is added the name is typeset instead. Client logos all share one height.
 export const CLIENTS = [
   { name: 'Suzuki Motorcycle India', logo: 'logos/suzuki.png' },
   { name: 'CNH Industrial', logo: 'logos/cnh-industrial.png' },
   { name: 'James Walker Inmarco', logo: 'logos/james-walker-inmarco.png' },
   { name: 'V2 Retail', logo: 'logos/v2-retail.png' },
-  { name: 'Gujarat Fluorochemicals (GFL)', logo: 'logos/gfl.webp', logoClass: 'h-12' },
-  { name: 'Ayurvet', logo: 'logos/ayurvet.png', logoClass: 'h-12' },
-  // Shows the typeset name until public/logos/matix.png is added
+  { name: 'Gujarat Fluorochemicals (GFL)', logo: 'logos/gfl.webp' },
+  { name: 'Ayurvet', logo: 'logos/ayurvet.png' },
   { name: 'Matix Fertilisers', logo: 'logos/matix.png' },
 ];
 
@@ -37,6 +36,7 @@ export const EXPERIENCE = [
     logo: 'logos/team-computers.png',
     logoClass: 'h-[37px]',
     location: 'Gurugram',
+    address: '5th floor, Plot no. 278, Phase-2, Phase II, Udyog Vihar, Sector 20, Gurugram, Haryana 122016',
     role: 'Business Analyst',
     dates: 'May 2023 – Sep 2026',
     summary: "Led business analysis for Suzuki Motorcycle India's digital transformation across the full SDLC: a Dealer Management System, the Vehicle Inspection System, Ringi approvals and a Training Management System. Ran requirements workshops, wrote BRDs and FRDs, drove Scrum delivery in Jira and coordinated UAT, and supported pre-sales with 30+ client calls and proposals.",
@@ -46,6 +46,7 @@ export const EXPERIENCE = [
     logo: 'logos/kockpit.png',
     logoClass: 'h-[37px]',
     location: 'New Delhi',
+    address: 'No. 1, Mohammad Pur, New Delhi, Delhi 110066',
     role: 'Senior Developer',
     dates: 'Jul 2020 – Apr 2023',
     summary: "Built cross-platform React Native apps for Android and iOS for clients including CNH Industrial, James Walker Inmarco and V2 Retail, from architecture and API integration through to Play Store and App Store release. This is where the 'technical' in Technical BA comes from.",

@@ -11,6 +11,13 @@ export default function Footer() {
             <p className="mt-4 text-muted leading-relaxed max-w-xl">
               I'm looking for {PERSONAL_INFO.role} roles where I can own requirements end to end, from stakeholder workshops to UAT sign-off. Happy to walk you through any of this work in more detail.
             </p>
+            <a
+              href={`mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent('Hello from your portfolio')}`}
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded bg-accent text-paper font-medium hover:bg-accent-strong transition-colors"
+            >
+              Send email
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
           <dl className="self-end border-t border-ink text-sm">
@@ -36,10 +43,9 @@ export default function Footer() {
           </dl>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-rule flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 text-sm text-muted">
-          <span>© {new Date().getFullYear()} {PERSONAL_INFO.name}. Designed and built by me.</span>
-          <a href="#" className="hover:text-accent transition-colors">Back to top ↑</a>
-        </div>
+        <p className="mt-16 pt-6 border-t border-rule text-sm text-muted">
+          © {new Date().getFullYear()} {PERSONAL_INFO.name}. Designed and built by me through GenAI
+        </p>
       </div>
     </footer>
   );

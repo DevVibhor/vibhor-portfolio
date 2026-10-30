@@ -54,7 +54,7 @@ export default function App() {
         {/* Key numbers and client logos */}
         <Highlights />
 
-        {/* Work carousel: live projects, documents, process flows */}
+        {/* Work carousel: documents and process flows */}
         <ArtifactsSection onOpenArtifact={setActiveArtifact} paused={Boolean(activeArtifact)} />
 
         {/* Work history */}

@@ -55,8 +55,9 @@ export const CATEGORY_LABELS = {
   flow: 'Process flow',
 };
 
-// Order of deliverable types in the work carousel
-export const WORK_ORDER = ['design', 'brd', 'solution', 'flow'];
+// Order of deliverable types in the work carousel.
+// Live projects ('design') are kept in ARTIFACTS but not shown; add 'design' back here to show them.
+export const WORK_ORDER = ['brd', 'solution', 'flow'];
 
 export const ARTIFACTS = [
   // 1. Live Client Website Deliverable

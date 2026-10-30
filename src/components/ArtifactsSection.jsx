@@ -70,7 +70,7 @@ export default function ArtifactsSection({ onOpenArtifact, paused: pausedByParen
           <div>
             <h2 className="font-serif text-3xl sm:text-4xl tracking-tight">Selected work</h2>
             <p className="mt-3 text-muted max-w-xl">
-              Real client work, and the documents behind it. Documents and flows open here; live projects open in a new tab.
+              Requirement documents, solution proposals and process flows from real client projects. Names, figures and other details have been altered to preserve each client's data and identity.
             </p>
           </div>
 

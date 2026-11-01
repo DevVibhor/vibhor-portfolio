@@ -68,7 +68,7 @@ export default function ArtifactsSection({ onOpenArtifact, paused: pausedByParen
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-12">
         <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
           <div>
-            <h2 className="font-serif text-3xl sm:text-4xl tracking-tight">Selected work</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl tracking-tight">Sample work</h2>
             <p className="mt-3 text-muted max-w-xl">
               Requirement documents, solution proposals and process flows from real client projects. Names, figures and other details have been altered to preserve each client's data and identity.
             </p>
@@ -102,7 +102,7 @@ export default function ArtifactsSection({ onOpenArtifact, paused: pausedByParen
           onWheel={holdForUser}
           onTouchStart={holdForUser}
           className="no-scrollbar mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth"
-          aria-label="Selected work"
+          aria-label="Sample work"
         >
           {ITEMS.map((artifact, idx) => (
             <li

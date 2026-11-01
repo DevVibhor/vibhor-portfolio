@@ -5,7 +5,7 @@ const FACTS = [
   { term: 'Experience', detail: 'Business Analyst since 2023, React Native developer from 2020' },
   { term: 'Writes', detail: 'BRDs, FRDs, user stories, solution proposals, UAT scenarios' },
   { term: 'Models', detail: 'BPMN process flows, use case and activity diagrams' },
-  { term: 'Works with', detail: 'Business users, division heads, IT and delegates from Japan' },
+  { term: 'Works with', detail: 'Business users, division heads, IT, internal development and project teams' },
   { term: 'Works in', detail: 'Agile / Scrum teams, web and mobile platforms' },
 ];
 

@@ -7,11 +7,11 @@ export default function Highlights() {
   return (
     <section className="snap-section border-t border-rule bg-surface">
       <div className="w-full max-w-5xl mx-auto px-5 sm:px-8">
-        <dl className="grid grid-cols-2">
+        <dl className="grid grid-cols-2 sm:grid-cols-3">
           {KEY_NUMBERS.map(({ value, label }) => (
             <div
               key={label}
-              className="py-8 sm:py-10 lg:py-14 pr-4 border-rule [&:not(:first-child)]:border-l [&:not(:first-child)]:pl-5 sm:[&:not(:first-child)]:pl-8"
+              className="py-8 sm:py-10 lg:py-14 pr-4 border-rule [&:not(:first-child)]:border-l [&:not(:first-child)]:pl-5 sm:[&:not(:first-child)]:pl-8 max-sm:[&:nth-child(3)]:col-span-2 max-sm:[&:nth-child(3)]:border-l-0 max-sm:[&:nth-child(3)]:pl-0 max-sm:[&:nth-child(3)]:border-t"
             >
               <dt className="sr-only">{label}</dt>
               <dd>
@@ -24,8 +24,8 @@ export default function Highlights() {
 
         <div className="py-8 lg:py-14 border-t border-rule flex flex-col gap-5 lg:gap-7">
           <p className="label shrink-0">Clients I've delivered for</p>
-          {/* Every client logo at the CNH logo's height; in dark mode one light panel sits behind them all */}
-          <ul className="flex flex-wrap items-center gap-x-5 gap-y-4 dark:bg-[rgb(243_239_230)] dark:rounded-md dark:p-4">
+          {/* Every client logo at one height (43px); in dark mode one light panel sits behind them all */}
+          <ul className="flex flex-wrap items-center justify-between gap-x-5 gap-y-4 dark:bg-[rgb(243_239_230)] dark:rounded-md dark:p-4">
             {CLIENTS.map((client) => (
               <li key={client.name}>
                 <Logo name={client.name} src={client.logo} className="h-[43px] max-w-none" plate={false} />

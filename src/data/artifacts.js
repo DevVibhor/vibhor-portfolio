@@ -15,14 +15,15 @@ export const PERSONAL_INFO = {
 export const KEY_NUMBERS = [
   { value: '6+', label: 'years in IT, as a BA and a developer' },
   { value: '30+', label: 'discovery calls, solution proposals and client walkthroughs in pre-sales' },
+  { value: '7', label: 'projects delivered end to end, from discovery to go-live' },
 ];
 
 // Clients I've delivered for. `logo` is a path under public/ (sources in logo-sources.md);
 // until a file is added the name is typeset instead. Client logos all share one height.
 export const CLIENTS = [
   { name: 'Suzuki Motorcycle India', logo: 'logos/suzuki.png' },
-  { name: 'CNH Industrial', logo: 'logos/cnh-industrial.png' },
-  { name: 'James Walker Inmarco', logo: 'logos/james-walker-inmarco.png' },
+  // { name: 'CNH Industrial', logo: 'logos/cnh-industrial.png' },
+  // { name: 'James Walker Inmarco', logo: 'logos/james-walker-inmarco.png' },
   { name: 'V2 Retail', logo: 'logos/v2-retail.png' },
   { name: 'Gujarat Fluorochemicals (GFL)', logo: 'logos/gfl.webp' },
   { name: 'Ayurvet', logo: 'logos/ayurvet.png' },
@@ -60,7 +61,7 @@ export const EXPERIENCE = [
     location: 'New Delhi',
     address: 'No. 1, Mohammad Pur, New Delhi, Delhi 110066',
     role: 'Senior Developer',
-    dates: 'Jul 2020 – Apr 2023',
+    dates: 'Jul 2020 – May 2023',
     summary: "Built cross-platform React Native apps for Android and iOS for clients including CNH Industrial, James Walker Inmarco and V2 Retail, from architecture and API integration through to Play Store and App Store release. This is where the 'technical' in Technical BA comes from.",
   },
 ];

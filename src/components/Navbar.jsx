@@ -12,8 +12,8 @@ export default function Navbar({ theme, onToggleTheme }) {
         </a>
 
         <nav className="flex items-center gap-5 sm:gap-7 text-sm">
-          <a href="#work" className="hover:text-accent transition-colors">Work</a>
           <a href="#experience" className="hidden sm:inline hover:text-accent transition-colors">Experience</a>
+          <a href="#work" className="hover:text-accent transition-colors">Work</a>
           <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
           <button
             onClick={onToggleTheme}

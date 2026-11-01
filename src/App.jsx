@@ -51,14 +51,14 @@ export default function App() {
         {/* Intro and fact sheet */}
         <Hero />
 
-        {/* Key numbers and client logos */}
+        {/* Work history */}
+        <Experience />
+
+        {/* Key numbers, client logos and certifications */}
         <Highlights />
 
         {/* Work carousel: documents and process flows */}
         <ArtifactsSection onOpenArtifact={setActiveArtifact} paused={Boolean(activeArtifact)} />
-
-        {/* Work history */}
-        <Experience />
       </main>
 
       <Footer />

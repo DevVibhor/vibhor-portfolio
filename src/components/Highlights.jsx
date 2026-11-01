@@ -1,8 +1,8 @@
 import React from 'react';
-import { KEY_NUMBERS, CLIENTS } from '../data/artifacts';
+import { KEY_NUMBERS, CLIENTS, CERTIFICATIONS } from '../data/artifacts';
 import Logo from './Logo';
 
-// Key numbers from the CV, then the clients they were delivered for
+// Key numbers from the CV, the clients they were delivered for, and certifications
 export default function Highlights() {
   return (
     <section className="snap-section border-t border-rule bg-surface">
@@ -33,6 +33,28 @@ export default function Highlights() {
             ))}
           </ul>
         </div>
+
+        {CERTIFICATIONS.length > 0 && (
+          <div className="py-8 lg:py-14 border-t border-rule flex flex-col gap-5 lg:gap-7">
+            <p className="label">Certifications</p>
+            <ul className="flex flex-wrap gap-x-12 gap-y-6">
+              {CERTIFICATIONS.map((cert) => (
+                <li key={cert.code || cert.name}>
+                  <p className="font-serif text-xl lg:text-2xl leading-snug">{cert.name}</p>
+                  <p className="mt-1.5 font-mono text-xs text-muted">
+                    {[cert.code, cert.issuer, cert.date].filter(Boolean).join(' · ')}
+                    {cert.url && (
+                      <>
+                        {' · '}
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer" className="link">Verify ↗</a>
+                      </>
+                    )}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );

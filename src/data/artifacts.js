@@ -29,6 +29,18 @@ export const CLIENTS = [
   { name: 'Matix Fertilisers', logo: 'logos/matix.png' },
 ];
 
+// Certifications. `date` and `url` (a verification link, e.g. from Microsoft Learn) are optional;
+// each is shown only when set.
+export const CERTIFICATIONS = [
+  {
+    name: 'Microsoft Certified: Azure Fundamentals',
+    code: 'AZ-900',
+    issuer: 'Microsoft',
+    date: 'Oct 2026',
+    url: 'https://learn.microsoft.com/en-us/users/vibhor-kashyap/credentials/43e796f9b337d8f1',
+  },
+];
+
 // Work history, most recent first (from the CV)
 export const EXPERIENCE = [
   {

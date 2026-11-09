@@ -52,7 +52,7 @@ export const EXPERIENCE = [
     address: '5th floor, Plot no. 278, Phase-2, Phase II, Udyog Vihar, Sector 20, Gurugram, Haryana 122016',
     role: 'Business Analyst',
     dates: 'May 2023 – Sep 2026',
-    summary: "Led business analysis for Suzuki Motorcycle India's digital transformation across the full SDLC: a Dealer Management System, the Vehicle Inspection System, Ringi approvals and a Training Management System. Ran requirements workshops, wrote BRDs and FRDs, drove Scrum delivery in Jira and coordinated UAT, and supported pre-sales with 30+ client calls and proposals.",
+    summary: "Led business analysis for Suzuki Motorcycle India's digital transformation across the full SDLC: a Dealer Management System, the Vehicle Inspection System, Ringi approvals and a Training Management System. Ran requirements workshops, wrote BRDs and FRDs, maintained the product backlog in Jira within Scrum Master-led sprints, coordinated UAT, and supported pre-sales with 30+ client calls and proposals.",
   },
   {
     company: 'Kockpit Analytics Pvt. Ltd.',
@@ -176,7 +176,7 @@ export const ARTIFACTS = [
   // 4. Solution Proposal: PI DMS
   {
     id: 'solution-pi-dms',
-    title: 'PI DMS Solution Proposal',
+    title: 'PI Document Management System Proposal',
     category: 'solution',
     version: 'Final',
     date: '2026',
@@ -204,9 +204,9 @@ export const ARTIFACTS = [
     id: 'flow-pcr-supplier',
     title: 'PCR raised by Supplier',
     category: 'flow',
-    project: 'Suzuki SQA',
+    project: 'Automotive OEM',
     version: 'Approved Spec',
-    date: 'Suzuki SQA System',
+    date: 'Automotive OEM',
     status: 'Approved',
     fileType: 'image',
     fileUrl: 'processflows/pcr-raised-by-supplier.png',
@@ -224,7 +224,7 @@ export const ARTIFACTS = [
     sections: [
       {
         heading: 'Process Overview: PCR Raised by Supplier',
-        content: 'Detailed workflow modeling the end-to-end lifecycle when a component supplier submits a Process Change Request (PCR) for manufacturing line modifications, material alterations, or tool relocations in the Suzuki SQA ecosystem.'
+        content: 'Detailed workflow modeling the end-to-end lifecycle when a component supplier submits a Process Change Request (PCR) for manufacturing line modifications, material alterations, or tool relocations in an automotive supplier quality system.'
       },
       {
         heading: 'Approval Checkpoints & Gateways',
@@ -238,9 +238,9 @@ export const ARTIFACTS = [
     id: 'flow-vehicle-inspection',
     title: 'Vehicle Inspection System',
     category: 'flow',
-    project: 'Suzuki SQA',
+    project: 'Automotive OEM',
     version: 'Production Flow',
-    date: 'Suzuki SQA System',
+    date: 'Automotive OEM',
     status: 'Approved',
     fileType: 'image',
     fileUrl: 'processflows/vehicle-inspection-system.png',
@@ -272,9 +272,9 @@ export const ARTIFACTS = [
     id: 'flow-die-mould',
     title: 'Die/Mould Duplication Process Flow',
     category: 'flow',
-    project: 'Suzuki SQA',
+    project: 'Automotive OEM',
     version: 'Approved Spec',
-    date: 'Suzuki SQA System',
+    date: 'Automotive OEM',
     status: 'Approved',
     fileType: 'image',
     fileUrl: 'processflows/die-mould-duplication-flow.png',

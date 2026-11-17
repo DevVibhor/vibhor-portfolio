@@ -4,7 +4,7 @@ import { PERSONAL_INFO } from '../data/artifacts';
 export default function Footer() {
   return (
     <footer id="contact" className="snap-section border-t border-rule scroll-mt-14">
-      <div className="w-full flex-1 flex flex-col max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-20">
+      <div className="w-full flex-1 flex flex-col max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-20">
         <div className="my-auto grid gap-10 md:grid-cols-[1.5fr_1fr] md:gap-16 lg:gap-24">
           <div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-6xl tracking-tight">Let's talk.</h2>
@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-16 pt-6 border-t border-rule text-sm lg:text-base text-muted">
-          © {new Date().getFullYear()} {PERSONAL_INFO.name}. Designed and built by me through GenAI
+          © {new Date().getFullYear()} {PERSONAL_INFO.name}. Designed and built with the help of GenAI
         </p>
       </div>
     </footer>

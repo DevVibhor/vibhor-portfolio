@@ -6,7 +6,7 @@ import Logo from './Logo';
 export default function Highlights() {
   return (
     <section className="snap-section border-t border-rule bg-surface">
-      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8">
+      <div className="w-full max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-8">
         <dl className="grid grid-cols-2 sm:grid-cols-3">
           {KEY_NUMBERS.map(({ value, label }) => (
             <div

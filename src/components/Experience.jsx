@@ -5,7 +5,7 @@ import Logo from './Logo';
 export default function Experience() {
   return (
     <section id="experience" className="snap-section border-t border-rule scroll-mt-14">
-      <div className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-16 md:py-20">
+      <div className="w-full max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-20">
         <div className="flex items-baseline justify-between gap-6">
           <h2 className="font-serif text-3xl sm:text-4xl tracking-tight">Work Experience</h2>
           <a href={PERSONAL_INFO.cvUrl} target="_blank" rel="noopener noreferrer" className="link text-sm">
@@ -26,7 +26,7 @@ export default function Experience() {
                 <h3 className="font-serif text-2xl tracking-tight">{job.role}</h3>
                 <p className="mt-1 text-sm">{job.address ? job.company : `${job.company}, ${job.location}`}</p>
                 {job.address && <p className="mt-0.5 text-xs text-muted">{job.address}</p>}
-                <p className="mt-3 leading-relaxed text-muted max-w-2xl">{job.summary}</p>
+                <p className="mt-3 leading-relaxed text-muted max-w-4xl">{job.summary}</p>
               </div>
             </li>
           ))}

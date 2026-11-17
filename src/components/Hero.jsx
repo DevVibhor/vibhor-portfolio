@@ -11,7 +11,7 @@ const FACTS = [
 
 export default function Hero() {
   return (
-    <section className="snap-section max-w-5xl mx-auto px-5 sm:px-8 pt-16 pb-20 md:pt-14 md:pb-16">
+    <section className="snap-section max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-8 pt-16 pb-20 md:pt-14 md:pb-16 lg:pb-14">
       <p className="label">{PERSONAL_INFO.name} · {PERSONAL_INFO.role}</p>
 
       <div className="mt-6 grid gap-12 md:grid-cols-[1.5fr_1fr] md:gap-16">
@@ -42,7 +42,7 @@ export default function Hero() {
             alt={`Portrait of ${PERSONAL_INFO.name}`}
             width="640"
             height="640"
-            className="portrait mx-auto w-48 sm:w-56 aspect-square object-cover"
+            className="portrait mx-auto w-48 sm:w-56 lg:w-64 aspect-square object-cover"
           />
           <dl className="mt-8 border-t border-ink text-sm">
             {FACTS.map(({ term, detail }) => (

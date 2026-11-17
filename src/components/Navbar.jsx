@@ -6,7 +6,7 @@ export default function Navbar({ theme, onToggleTheme }) {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-paper border-b border-rule">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-5 sm:px-8 h-14 flex items-center justify-between gap-4">
         <a href="#" className="font-serif text-xl tracking-tight hover:text-accent transition-colors">
           {PERSONAL_INFO.name}
         </a>
